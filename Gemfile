@@ -34,6 +34,8 @@ gem "devise"
 gem "bootstrap", "~> 5.2"
 gem "simple_form"
 
+# add dot env gem for API Key
+ gem "dotenv-rails"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
