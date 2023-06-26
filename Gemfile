@@ -36,6 +36,10 @@ gem "simple_form"
 
 # add dot env gem for API Key
  gem "dotenv-rails"
+
+ # add cloudinary gem
+ gem "cloudinary"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
