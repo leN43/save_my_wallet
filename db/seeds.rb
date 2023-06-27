@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Expense.create!(name: "Rent", amount: 1000, date: "2021-09-01")
-
 Building.destroy_all
 
 buildings = [{ name: 'Rastaurant', category: 'food', level: 2 },
@@ -22,3 +20,12 @@ buildings.each do |building|
   )
 end
 
+cities = [{ name: "Bikini Bottom", level: 3, user_id: 1 }]
+
+cities.each do |city|
+  City.create!(
+    name: city[:name],
+    level: city[:level],
+    user_id: city[:user_id]
+  )
+end
