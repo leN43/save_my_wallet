@@ -1,9 +1,18 @@
 // Import Google fonts
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
+=======
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+
+// Define fonts for body and headers
+$body-font: "Aldrich", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+>>>>>>> 9d0cc82a713d1664e433b606c7e57e24cddb27af
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
