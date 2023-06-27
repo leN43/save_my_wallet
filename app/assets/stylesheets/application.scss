@@ -1,4 +1,11 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
 @import "bootstrap";
+<<<<<<< HEAD
 
 ul {
   -moz-transform: scale(0.2);
@@ -184,3 +191,10 @@ ul.active .close {
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
 }
+=======
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+>>>>>>> 7140125c3e47cceb1f303f8a989da28eb74a1986
