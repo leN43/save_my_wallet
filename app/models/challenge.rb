@@ -1,4 +1,5 @@
 class Challenge < ApplicationRecord
+  has_many :users, through: :user_games
   validates :title, presence: true
   validates :description, presence: true
   validates :badge, presence: true, uniqueness: true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_161156) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_121127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,39 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_161156) do
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "finished_at"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cities_on_user_id"
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "title"
+    t.integer "amount"
+    t.string "category"
+    t.bigint "user_id", null: false
+    t.bigint "building_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["building_id"], name: "index_expenses_on_building_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
+  end
+
+  create_table "user_games", force: :cascade do |t|
+    t.boolean "status"
+    t.datetime "finished_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "challenge_id", null: false
+    t.index ["challenge_id"], name: "index_user_games_on_challenge_id"
+    t.index ["user_id"], name: "index_user_games_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,10 +100,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_161156) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname"
+    t.bigint "user_game_id", null: false
+    t.bigint "city_id", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_game_id"], name: "index_users_on_user_game_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cities", "users"
+  add_foreign_key "expenses", "buildings"
+  add_foreign_key "expenses", "users"
+  add_foreign_key "user_games", "challenges"
+  add_foreign_key "user_games", "users"
+  add_foreign_key "users", "cities"
+  add_foreign_key "users", "user_games"
 end
