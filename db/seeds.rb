@@ -7,3 +7,18 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Expense.create!(name: "Rent", amount: 1000, date: "2021-09-01")
+
+Building.destroy_all
+
+buildings = [{ name: 'Rastaurant', category: 'food', level: 2 },
+             { name: 'Clothes', category: 'shopping', level: 3 },
+             { name: 'Hospital', category: 'health', level: 1 }]
+
+buildings.each do |building|
+  Building.create!(
+    name: building[:name],
+    category: building[:category],
+    level: building[:level]
+  )
+end
+
