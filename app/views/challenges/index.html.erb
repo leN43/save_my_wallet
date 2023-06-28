@@ -1,0 +1,12 @@
+<div class="container">
+  <h1> Challenges </h1>
+  <p> "Hello, <%= current_user.nickname%>! Which challenge do you want to try?" </p>
+   <h2><% @challenges.each do |challenge| %></h2>
+      <%= link_to challenge_path(challenge) %>
+      <br>
+        <h3> <%= challenge.name %> </h3>
+        <h3> <%= challenge.description %> </h3>
+        <h3> <%= challenge.badge %> </h3>
+        <h3> <%= challenge.level %> </h3>
+    <% end %>
+</div>
