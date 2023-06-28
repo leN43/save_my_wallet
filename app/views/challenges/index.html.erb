@@ -9,3 +9,4 @@
         <h3> <%= challenge.level %> </h3>
     <% end %>
 </div>
+<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
