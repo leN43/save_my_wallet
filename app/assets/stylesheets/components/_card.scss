@@ -1,0 +1,20 @@
+.card-expense {
+  display: flex;
+  flex-direction: row;
+  h2 {
+    padding: 1px 5px;
+    font-size: 24px;
+  }
+  p {
+    padding: 1px 5px;
+    font-size: 19px;
+  }
+}
+
+.card-expense-show {
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 310px;
+  margin: 28px auto;
+  padding: 7px;
+}

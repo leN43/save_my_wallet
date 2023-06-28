@@ -3,8 +3,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 310px;
+  margin: 28px auto;
+  padding: 10px;
+
+  i {
+    color: $red-pastel;
+    margin: 12px 0px 26px 0px;
+  }
 }
 
-.card-expense {
-  border-radius: $border-radius;
+.cards-expenses h1 {
+  border-bottom: 2px dashed;
+  margin-bottom: 15px;
+  padding: 12px;
 }

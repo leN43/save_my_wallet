@@ -11,8 +11,13 @@
 @import "components/button";
 @import "pages/index";
 
-// Main container for all the components
+@import "components/cards";
+@import "components/card";
 
+// Main container for all the componentss
 .main-container {
+}
 
+a {
+  text-decoration: none;
 }
