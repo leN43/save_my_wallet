@@ -1,7 +1,7 @@
 <div class="container">
   <h1> Your challenges </h1>
   <p> "Hello, <%= current_user.nickname%>! All your challenges : " </p>
-  <h2><% @challenges.each do |challenge| %></h2>
+  <% @challenges.each do |challenge| %>
     <br>
       <h3> <%= link_to challenge.title, challenge_path(challenge) %> </h3>
       <h3> <%= challenge.level %> </h3>

@@ -4,6 +4,7 @@ class UserGameController < ApplicationController
 
   def index
     @user_games = UserGame.all
+    @challenges = Challenge.all
   end
 
   def new
