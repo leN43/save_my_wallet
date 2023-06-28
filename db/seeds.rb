@@ -63,6 +63,6 @@ cities.each do |city|
 end
 
 # Expense Seed
-Expense.create!(title: 'Food', amount: 100, category: 'food', building_id: Building.find_by(category: 'food').id, user_id: User.first.id)
-Expense.create!(title: 'Clothes', amount: 200, category: 'shopping', building_id: Building.find_by(category: 'shopping').id, user_id: User.first.id)
-Expense.create!(title: 'Hospital', amount: 300, category: 'health', building_id: Building.find_by(category: 'health').id, user_id: User.first.id)
+Expense.create!(title: 'Food', amount: 100, category: 'food', description: 'Restau with my girlfriend', building_id: Building.find_by(category: 'food').id, user_id: User.first.id)
+Expense.create!(title: 'Clothes', amount: 200, category: 'shopping', description: 'shopping for my mother', building_id: Building.find_by(category: 'shopping').id, user_id: User.first.id)
+Expense.create!(title: 'Hospital', amount: 300, category: 'health', description: 'My hemoroide issue', building_id: Building.find_by(category: 'health').id, user_id: User.first.id)
