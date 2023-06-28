@@ -1,0 +1,10 @@
+// Cards expenses dashboard (expenses#index)
+.cards-expenses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-expense {
+  border-radius: $border-radius;
+}

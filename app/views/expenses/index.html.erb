@@ -1,0 +1,15 @@
+<h1>My expenses</h1>
+
+<%# Main component for expenses %>
+<div class="cards-expenses">
+<% @expenses.each do |expense| %>
+  <div class="card-expense">
+    <h2><%= link_to expense.title ,expense_path(expense) %></h2>
+    <p> <%= expense.category %> </p>
+    <p><%= expense.amount %> €</p>
+  </div>
+<% end %>
+</div>
+
+<%= link_to "New expense", new_expense_path %>
+<%= link_to "Back to home", root_path %>
