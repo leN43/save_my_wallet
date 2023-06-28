@@ -1,7 +1,7 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show]
 
-  # GET /challenges or /challenges.json
+
   def index
     @challenges = Challenge.all
   end
