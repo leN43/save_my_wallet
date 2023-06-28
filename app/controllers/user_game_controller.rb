@@ -4,10 +4,16 @@ class UserGameController < ApplicationController
 
   def index
     @user_games = UserGame.all
-    @challenges = Challenge.all
+
+    if @user_games.any?
+      @user_challenges = Challenge.joins(:user_games).distinct
+    else
+      @user_challenges = nil
+    end
   end
 
   def new
+    @challenges = Challenge.all
     @user_game = UserGame.new
     @challenge = Challenge.new
   end
