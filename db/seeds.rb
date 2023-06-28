@@ -10,7 +10,11 @@
 Building.destroy_all
 Challenge.destroy_all
 City.destroy_all
-Expense.destroy_all
+User.destroy_all
+
+#Create User
+
+User.create!(email:"liloo@lewagon.com", password:"123456", nickname:"Liloo", first_name:"Liloo", last_name:"Liloo")
 
 # Buildings Seed
 buildings = [{ name: 'Restaurant', category: 'food', level: 2 },
@@ -33,10 +37,9 @@ cities.each do |city|
     level: city[:level],
     user_id: city[:user_id]
 # Challenges Seed
->>>>>>> e6ca8e4818a480bf1c580e57b0ad0d70974c5c1d
 challenges = [{ title: 'No restaurant', description: 'No restaurant for 1 week', badge: 'No restaurant', level: 1 },
               { title: 'No shopping', description: 'No shopping for 2 weeks', badge: 'No shopping', level: 2 },
-              { title: 'Supersaver', description: 'No useless dispenses for 3 weeks', badge: 'Savings', level: 3 },
+              { title: 'Supersaver', description: 'No useless expenses for 3 weeks', badge: 'Savings', level: 3 },
               { title: 'Good health', description: 'You did not go to hospital for a month!', badge: 'Good health', level: 1}]
 
 challenges.each do |challenge|
@@ -45,12 +48,11 @@ challenges.each do |challenge|
     description: challenge[:description],
     badge: challenge[:badge],
     level: challenge[:level]
->>>>>>> 9c132edc2a355bb35845d1353f8f092b677d4e82
   )
 end
 
 # City Seed
-cities = [{ name: "Bikini Bottom", level: 3, user_id: 1 }]
+cities = [{ name: "Bikini Bottom", level: 3, user_id: User.first.id }]
 
 cities.each do |city|
   City.create!(
