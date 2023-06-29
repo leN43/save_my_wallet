@@ -1,11 +1,11 @@
-<h1>My expenses</h1>
-
 <%# Main component for expenses %>
 <div class="cards-expenses">
+  <h1>My expenses</h1>
+  <i class="fa-solid fa-money-bill-wave fa-2xl"></i>
 <% @expenses.each do |expense| %>
   <div class="card-expense">
     <h2><%= link_to expense.title ,expense_path(expense) %></h2>
-    <p> <%= expense.category %> </p>
+    <p><i><%= expense.category %></i></p>
     <p><%= expense.amount %> €</p>
   </div>
 <% end %>

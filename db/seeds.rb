@@ -12,14 +12,15 @@ Challenge.destroy_all
 City.destroy_all
 User.destroy_all
 
-#Create User
-
-User.create!(email:"liloo@lewagon.com", password:"123456", nickname:"Liloo", first_name:"Liloo", last_name:"Liloo")
+# Create User
+User.create!(email: "liloo@lewagon.com", password: "123456", nickname: "Liloo", first_name: "Liloo", last_name: "Liloo")
 
 # Buildings Seed
-buildings = [{ name: 'Restaurant', category: 'food', level: 2 },
-            { name: 'Clothes', category: 'shopping', level: 3 },
-            { name: 'Hospital', category: 'health', level: 1 }]
+buildings = [
+  { name: 'Restaurant', category: 'food', level: 2 },
+  { name: 'Clothes', category: 'shopping', level: 3 },
+  { name: 'Hospital', category: 'health', level: 1 }
+]
 
 buildings.each do |building|
   Building.create!(
@@ -29,18 +30,13 @@ buildings.each do |building|
   )
 end
 
-cities = [{ name: "Bikini Bottom", level: 3, user_id: 1 }]
-
-cities.each do |city|
-  City.create!(
-    name: city[:name],
-    level: city[:level],
-    user_id: city[:user_id]
 # Challenges Seed
-challenges = [{ title: 'No restaurant', description: 'No restaurant for 1 week', badge: 'No restaurant', level: 1 },
-              { title: 'No shopping', description: 'No shopping for 2 weeks', badge: 'No shopping', level: 2 },
-              { title: 'Supersaver', description: 'No useless expenses for 3 weeks', badge: 'Savings', level: 3 },
-              { title: 'Good health', description: 'You did not go to hospital for a month!', badge: 'Good health', level: 1}]
+challenges = [
+  { title: 'No restaurant', description: 'No restaurant for 1 week', badge: 'No restaurant', level: 1 },
+  { title: 'No shopping', description: 'No shopping for 2 weeks', badge: 'No shopping', level: 2 },
+  { title: 'Supersaver', description: 'No useless expenses for 3 weeks', badge: 'Savings', level: 3 },
+  { title: 'Good health', description: 'You did not go to the hospital for a month!', badge: 'Good health', level: 1 }
+]
 
 challenges.each do |challenge|
   Challenge.create!(
@@ -52,7 +48,9 @@ challenges.each do |challenge|
 end
 
 # City Seed
-cities = [{ name: "Bikini Bottom", level: 3, user_id: User.first.id }]
+cities = [
+  { name: "Bikini Bottom", level: 3, user_id: User.first.id }
+]
 
 cities.each do |city|
   City.create!(
