@@ -4,8 +4,9 @@ import "@popperjs/core"
 import "controllers"
 
 
-// $(document).ready(function(){
-//   $('.close').click(function(){
-//     $('ul').toggleClass('active');
-//   })
-// })
+// TO Change in a controller once city page is created
+$(document).ready(function(){
+  $('.close').click(function(){
+    $('ul').toggleClass('active');
+  })
+})
