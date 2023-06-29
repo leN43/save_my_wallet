@@ -6,7 +6,7 @@ class UserGameController < ApplicationController
     @user_games = UserGame.all
 
     if @user_games.any?
-      @user_challenges = Challenge.joins(:user_games).distinct
+      @user_challenges = Challenge.joins(:user_games).distinct #test include
     else
       @user_challenges = nil
     end
