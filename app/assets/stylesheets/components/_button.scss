@@ -1,12 +1,4 @@
-// .button-game {
-//   background-color: white;
-//   border-radius: 50px;
-//   margin: 5px;
-//   padding: 8px;
-// }
-
-
-/* CSS */
+// buttons on user_game new
 .button-game {
   background-color: $saumon;
   border: 2px solid $saumon;
@@ -33,4 +25,15 @@
 .button-game:active {
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
+}
+
+// button on user_game index
+.button-add-challenge {
+  background-color: $red-pastel;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 50px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
 }
