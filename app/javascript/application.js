@@ -10,3 +10,4 @@ $(document).ready(function(){
     $('ul').toggleClass('active');
   })
 })
+import "@hotwired/turbo-rails"
