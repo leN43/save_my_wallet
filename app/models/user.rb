@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   has_many :expenses
   has_many :challenges, through: :user_games
-  has_one :city
+  has_one_attached :city
   validates :first_name, :last_name, :nickname, :email, presence: true
   validates :nickname, :email, uniqueness: true
 end
