@@ -14,10 +14,13 @@
 @import "components/cards";
 @import "components/card";
 
+@import "components/button-navbar";
 // Main container for all the componentss
-.main-container {
-}
 
 a {
   text-decoration: none;
+}
+
+body {
+  background-color:$cream;
 }
