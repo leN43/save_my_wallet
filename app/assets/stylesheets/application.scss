@@ -14,8 +14,14 @@
 @import "components/cards";
 @import "components/card";
 
+@import "components/button";
+
 // Main container for all the componentss
 
 a {
   text-decoration: none;
+}
+
+body {
+  background-color:$cream;
 }

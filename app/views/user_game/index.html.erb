@@ -1,7 +1,7 @@
 <div class="user-game-cards">
   <h1> Your challenges </h1>
-    <div class="user-game-card">
       <p> Hello, <%= current_user.nickname%>! All your challenges :  </p>
+    <div class="user-game-card">
       <% if @user_challenge.nil? %>
         <p> You have no challenges yet! </p>
       <% else %>
@@ -14,3 +14,5 @@
     </div>
   <%= link_to "add a challenge",  new_user_game_path %>
 </div>
+
+<%= link_to "Back to home", root_path %>
