@@ -17,4 +17,28 @@
   width: 310px;
   margin: 28px auto;
   padding: 7px;
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 19px;
+  }
+
+  #category {
+    text-align: center;
+    font-style: italic;
+    color: $red-pastel;
+  }
+
+  #description {
+    border-top: 2px dashed;
+    padding: 11px 0px 0px 0px;
+  }
+
+  i {
+    color: $red-pastel;
+  }
 }

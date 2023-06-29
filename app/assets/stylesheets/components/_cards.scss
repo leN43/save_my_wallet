@@ -2,16 +2,23 @@
 .cards-expenses {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 310px;
   margin: 28px auto;
   padding: 10px;
 
-  i {
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .fa-solid {
     color: $red-pastel;
     margin: 12px 0px 26px 0px;
+    display: flex;
+    justify-content: center;
   }
 }
 
