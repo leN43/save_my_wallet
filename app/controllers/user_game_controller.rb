@@ -4,9 +4,9 @@ class UserGameController < ApplicationController
 
   def index
     @user_games = UserGame.all
-
     if @user_games.any?
-      @user_challenges = Challenge.joins(:user_games).distinct #test include
+      # @user_challenges = Challenge.joins(:user_games).distinct #test include
+      @user_challenges = Challenge.includes(:user_games)
     else
       @user_challenges = nil
     end
@@ -22,8 +22,12 @@ class UserGameController < ApplicationController
     @user_game.challenge_id = @challenge.id
     @user_game.user_id = current_user.id
     @user_game = UserGame.new(user_game_params)
-    @user_game.save!
-    redirect_to user_game_path(@user_game)
+    if @user_game.save!
+      redirect_to user_game_path(@user_game)
+      current_user.update(user_game_id: @user_game.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show; end
