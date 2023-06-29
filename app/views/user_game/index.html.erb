@@ -1,12 +1,11 @@
-<div class="container">
+<div class="user-game-cards">
   <h1> Your challenges </h1>
+   <div class="user-game-card">
   <p> Hello, <%= current_user.nickname%>! All your challenges :  </p>
   <% if @user_challenge.nil? %>
     <p> You have no challenges yet! </p>
   <% else %>
-  <div class="user-game-cards">
     <% @user_challenges.each do |challenge| %>
-      <div class="user-game-card">
         <h3> <%= link_to challenge.title, challenge_path(challenge) %> </h3>
         <h3> <%= challenge.level %> </h3>
       </div>
