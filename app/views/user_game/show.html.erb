@@ -1,9 +1,9 @@
-<div class="container">
-  <br>
-    <h1><%= @challenge.title %></h1>
-    <h3><%= @challenge.description %></h3>
-    <h3><%= @challenge.badge %></h3>
-    <h3><%= @challenge.level %></h3>
-  <br>
-  <%= link_to 'Back to your challenges', user_game_index_path %>
+<div class="cards-challenges">
+  <h1><%= @challenge.title %></h1>
+    <div class="card-challenges-show">
+      <h2><%= @challenge.description %></h2>
+      <h2><%= @challenge.badge %></h2>
+      <p><%= @challenge.level %></p>
+    </div>
+    <%= link_to 'Back to your challenges', user_game_index_path %>
 </div>
