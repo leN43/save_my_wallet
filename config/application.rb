@@ -18,6 +18,7 @@ module SaveMyWallet
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.assets.paths << Rails.root.join('node_modules')
 
     config.generators do |generate|
       generate.assets false
