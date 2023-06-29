@@ -4,8 +4,8 @@
     <p> "Hello, <%= current_user.nickname%>! Which challenge do you want to try?" </p>
     <h2><% @challenges.each do |challenge| %></h2>
         <br>
-          <h3> <%= link_to challenge.title, challenge_path(challenge) %> </h3>
-          <h3> <%= challenge.level %> </h3>
+          <h2> <%= link_to challenge.title, challenge_path(challenge) %> </h2>
+          <p> <%= challenge.level %> </p>
       <% end %>
   </div>
 </div>

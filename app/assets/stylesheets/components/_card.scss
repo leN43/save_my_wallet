@@ -43,9 +43,9 @@
 }
 
 // Card challenges
-.user-game-card {
+.card-challenges {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   h2 {
     padding: 1px 5px;
     font-size: 24px;
@@ -56,7 +56,7 @@
   }
 }
 
-.user-game-card-show {
+.card-challenges-show {
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 310px;
