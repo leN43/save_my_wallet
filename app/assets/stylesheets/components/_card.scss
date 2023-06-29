@@ -86,4 +86,19 @@
   width: 310px;
   margin: 28px auto;
   padding: 7px;
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 2px solid;
+    padding: 12px;
+  }
+
+  p {
+    font-size: 19px;
+  }
+
+  i {
+    color: $red-pastel;
+  }
 }
