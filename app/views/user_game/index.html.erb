@@ -11,14 +11,6 @@
           <%= render "challenge", challenge: challenge %>
         <% end %>
       <% end %>
-<<<<<<< HEAD
-    <% end %>
-  </div>
-  <%= turbo_frame_tag :challenge_form do %>
-  <% end %>
-  <br>
-  <%= link_to "add a challenge",  new_user_game_path, data:{turbo_frame: :challenge_form} %>
-=======
     </div>
 
 
@@ -26,5 +18,4 @@
   <% end %>
     <br>
   <%= link_to "add a challenge",  new_user_game_path, data:{turbo_frame: :challenges}, class: "button-add-challenge" %>
->>>>>>> master
 </div>
