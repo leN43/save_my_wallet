@@ -119,6 +119,8 @@ GEM
       sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    groupdate (6.2.1)
+      activesupport (>= 5.2)
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -286,11 +288,13 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2)
   capybara
+  chartkick
   cloudinary
   debug
   devise
   dotenv-rails
   font-awesome-sass (~> 6.1)
+  groupdate
   importmap-rails
   jbuilder
   pg (~> 1.1)

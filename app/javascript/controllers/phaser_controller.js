@@ -18,6 +18,7 @@ export default class extends Controller {
     };
 
     const game = new Phaser.Game(config);
+    this.element.appendChild(game.canvas);
     game.scene.start('Example');
   }
 }
