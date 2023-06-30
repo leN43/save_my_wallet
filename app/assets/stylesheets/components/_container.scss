@@ -1,0 +1,19 @@
+.container-new-expense {
+  margin: 20px;
+  label {
+    font-size: 18px;
+  }
+  input {
+    border-radius: 50px;
+    border: 1px solid $saumon;
+  }
+  textarea {
+    border-radius: 50px;
+    border: 1px solid $saumon
+  }
+}
+
+.link_to_back {
+  text-align: center;
+  margin-top: 10px;
+}
