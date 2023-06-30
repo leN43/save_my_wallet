@@ -2,57 +2,68 @@
 .cards-expenses {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 310px;
   margin: 28px auto;
   padding: 10px;
+  background-color: white;
 
-  i {
+  h1 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px dashed;
+    margin-bottom: 15px;
+    padding: 12px;
+  }
+
+  .fa-solid {
     color: $red-pastel;
     margin: 12px 0px 26px 0px;
+    display: flex;
+    justify-content: center;
   }
-}
-
-.cards-expenses h1 {
-  border-bottom: 2px dashed;
-  margin-bottom: 15px;
-  padding: 12px;
 }
 
 // Cards user_game
 .user-game-cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 310px;
   margin: 28px auto;
-  padding: 10px;
-}
+  padding: 10px 10px 30px 10px;
+  background-color: white;
 
-.user-game-cards h1 {
-  border-bottom: 2px dashed;
-  margin-bottom: 15px;
-  padding: 12px;
+  h1 {
+    border-bottom: 2px solid;
+    margin-bottom: 15px;
+    padding: 12px;
+  }
+
+  p {
+    font-size: 19px;
+  }
 }
 
 // Cards challenges
 .cards-challenges {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 310px;
   margin: 28px auto;
   padding: 10px;
-}
+  text-align: center;
+  background-color: white;
 
-.cards-challenges h1 {
-  border-bottom: 2px dashed;
-  margin-bottom: 15px;
-  padding: 12px;
+
+  h1 {
+    border-bottom: 2px solid;
+    margin-bottom: 15px;
+    padding: 12px;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }

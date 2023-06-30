@@ -1,7 +1,9 @@
   <div class="card-expense-show">
     <h2><%= @expense.title %></h2>
-    <p> <%= @expense.category %> </p>
-    <p><%= @expense.amount %> €</p>
-    <p><%= @expense.description %></p>
-    <p><%= @expense.created_at %></p>
+    <p id="category"> <%= @expense.category %> </p>
+    <p id="description"><i class="fa-regular fa-comment-dots"></i> <%= @expense.description %></p>
+    <p><i class="fa-solid fa-coins"></i> <%= @expense.amount %> €</p>
+    <p><i class="fa-regular fa-calendar"></i> <%= @expense.created_at %></p>
   </div>
+
+    <%= link_to "Back to list", expenses_path %>

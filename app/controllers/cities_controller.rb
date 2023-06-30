@@ -1,5 +1,13 @@
 class CitiesController < ApplicationController
-  before_action :set_city, only: %i[show edit update]
+  before_action :set_city, only: %i[index show edit update]
+
+  def index
+    if @city.nil?
+      redirect_to new_city_path, status: :see_other
+    else
+      redirect_to city_path(@city), status: :see_other
+    end
+  end
 
   def new
     @city = City.new
@@ -33,7 +41,11 @@ class CitiesController < ApplicationController
   private
 
   def set_city
-    @city = City.includes(:user).find(params[:id])
+    if current_user.city_id.nil?
+      @city = []
+    else
+      @city = City.includes(:user).find(current_user.city_id)
+    end
   end
 
   def city_params

@@ -1,9 +1,7 @@
-<div class="cards-challenges">
-  <h1><%= @challenge.title %></h1>
-    <div class="card-challenges-show">
-      <h2><%= @challenge.description %></h2>
-      <h2><%= @challenge.badge %></h2>
-      <p><%= @challenge.level %></p>
-    </div>
-  <%= link_to 'Back to challenges', challenges_path %>
+<div class="card-challenges-show">
+  <h2><%= @challenge.title %></h2>
+    <p><i class="fa-regular fa-comment-dots"></i> <%= @challenge.description %></p>
+    <p><i class="fa-solid fa-trophy"></i> <%= @challenge.badge %></p>
+    <p><i class="fa-solid fa-arrow-trend-up"></i> <%= @challenge.level %></p>
 </div>
+  <%= link_to 'Back to challenges', challenges_path %>
