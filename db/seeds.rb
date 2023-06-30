@@ -50,18 +50,18 @@ challenges.each do |challenge|
   )
 end
 
-# City Seed
-cities = [
-  { name: "Bikini Bottom", level: 3, user_id: User.first.id }
-]
+# # City Seed
+# cities = [
+#   { name: "Bikini Bottom", level: 3, user_id: User.first.id }
+# ]
 
-cities.each do |city|
-  City.create!(
-    name: city[:name],
-    level: city[:level],
-    user_id: city[:user_id]
-  )
-end
+# cities.each do |city|
+#   City.create!(
+#     name: city[:name],
+#     level: city[:level],
+#     user_id: city[:user_id]
+#   )
+# end
 
 # Expense Seed
 Expense.create!(title: 'Food', amount: 100, category: 'food', description: 'Restau with my girlfriend', building_id: Building.find_by(category: 'food').id, user_id: User.first.id)
