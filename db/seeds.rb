@@ -32,10 +32,12 @@ end
 
 # Challenges Seed
 challenges = [
-  { title: 'No restaurant', description: 'No restaurant for 1 week', badge: 'No restaurant', level: 1 },
-  { title: 'No shopping', description: 'No shopping for 2 weeks', badge: 'No shopping', level: 2 },
-  { title: 'Supersaver', description: 'No useless expenses for 3 weeks', badge: 'Savings', level: 3 },
-  { title: 'Good health', description: 'You did not go to the hospital for a month!', badge: 'Good health', level: 1 }
+  { title: 'No restaurant', description: 'This week you did not go to restaurant. Congratulations! You stay at home. Keep it up for more savings', badge: 'No restaurant', level: 1 },
+  { title: 'No shopping', description: '2 weeks without any shopping. You made it! You have enough clothes in you closet. You can wait for Black Friday (or have a look to Vinted for more savings)', badge: 'No shopping', level: 2 },
+  { title: 'Supersaver', description: 'No useless expenses for 3 weeks. You made it! that means that you can save money for your next holidays?', badge: 'Savings', level: 3 },
+  { title: 'Good health', description: 'You did not go to the doctor for a month! It is encouraging not to spend a lot of time to the doctor. You are in good health', badge: 'Good health', level: 1 },
+  { title: 'Holidays', description: 'You succeed to save money for your next holidays. You can be proud of yourself', badge: 'Holidays', level: 3},
+  { title: 'Home cooker', description: 'You have been to the grocery store, and decided to cook at home last week. Congratulations! No restaurants', badge: 'Home cooker', level: 1 },
 ]
 
 challenges.each do |challenge|
