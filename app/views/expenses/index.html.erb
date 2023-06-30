@@ -12,7 +12,5 @@
 
 <%= turbo_frame_tag :expense_form do %>
 <% end %>
+
 <%= link_to "add an expense", new_expense_path, data:{turbo_frame: :expense_form} %>
-
-
-<%= link_to "Back to home", root_path %>

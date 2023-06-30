@@ -1,27 +1,27 @@
 <ul>
  <li>
-    <%= link_to "/cities/1" do %>
+  <%= link_to cities_path do %>
       <i class="fa fa-home"></i>
   <% end %>
 </li>
   <li>
     <%= link_to user_game_index_path do %>
       <i class="fa-solid fa-user"></i>
-        <% end %>
+    <% end %>
     </a>
   </li>
   <li>
     <%= link_to expenses_path do %>
-     <i class="fa-solid fa-money-bill"></i>
-     <% end %>
+      <i class="fa-solid fa-money-bill"></i>
+    <% end %>
   </li>
   <li>
-    <a href="http://[::1]:3000/expenses/new">
+    <%= link_to cities_path do %>
       <i class="fa-solid fa-piggy-bank fa-rotate-180 fa-lg"></i>
-     </a>
+    <% end %>
   </li>
   <li>
-    <a href="http://[::1]:3000/cities/1/edit">
+    <a href="#">
       <i class="fa fa-gears"></i>
     </a>
   </li>
