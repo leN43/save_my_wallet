@@ -1,0 +1,2 @@
+<%= turbo_stream.before :expenses, partial: "expenses/expense", locals:{expense: @expense} %>
+<%= turbo_stream.replace :expense_form, "" %>
