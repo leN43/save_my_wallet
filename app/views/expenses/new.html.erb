@@ -1,7 +1,4 @@
- <% simple_form_for @expense do |f| %>
-    <%= f.input :title %>
-    <%= f.input :category %>
-    <%= f.input :description %>
-    <%= f.input :amount %>
-    <%= f.button :submit %>
-  <% end %>
+<h1>Hello</h1>
+<%= turbo_frame_tag :expense_form do %>
+  <%= render "form" %>
+<% end %>
