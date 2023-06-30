@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # Expense.create!(name: "Rent", amount: 1000, date: "2021-09-01")
 
-Building.destroy_all
 Expense.destroy_all
+Building.destroy_all
 Challenge.destroy_all
 City.destroy_all
 User.destroy_all
