@@ -1,13 +1,11 @@
 <div class="user-game-cards">
   <%# add c controller stimulus to listen click and update the strong params %>
   <div class="user-game-card" data-controller="challenge">
+      <%= turbo_frame_tag :challenges do %>
 
       <h2><% @challenges.each do |challenge| %></h2>
-      <%= turbo_frame_tag :challenges do %>
         <button class="button-game" data-challenge-target="idChallenge" data-challenge-id=<%= challenge.id %>> <%= challenge.title %> </button>
       <% end %>
     <% end %>
   </div>
 </div>
-
-<%= link_to "Back to challenges", user_game_index_path %>
