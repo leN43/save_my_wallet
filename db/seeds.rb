@@ -13,8 +13,8 @@ Challenge.destroy_all
 User.destroy_all
 City.destroy_all
 
-# Create User
-User.create!(email: "liloo@lewagon.com", password: "123456", nickname: "Liloo", first_name: "Liloo", last_name: "Liloo")
+# # Create User
+# User.create!(email: "liloo@lewagon.com", password: "123456", nickname: "Liloo", first_name: "Liloo", last_name: "Liloo")
 
 # Buildings Seed
 buildings = [
