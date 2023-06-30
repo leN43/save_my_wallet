@@ -1,6 +1,6 @@
 <div class="cards-challenges">
   <h1> All Challenges </h1>
-    <p> "Hello, <%= current_user.nickname%>! Here are all the challenges avaible for your city : " </p>
+    <p> Hello, <%= current_user.nickname%>! Here are all the challenges avaible for your city :  </p>
     <% @challenges.each do |challenge| %>
     <div class="card-challenges">
           <p> <%= link_to challenge.title, challenge_path(challenge) %> </p>

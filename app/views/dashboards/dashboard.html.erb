@@ -1,7 +1,11 @@
 <div class="cards-dahsboard">
   <h1> <%= @user.nickname %> dashboard</h1>
-  <%= pie_chart Expense.group(:category).count %>
-
-
-
+  <div class="card-dashboard">
+    <h3>Expense by categories</h3>
+      <%= pie_chart Expense.group(:category).sum(:amount), donut: true, width: "80%", height: "80%", colors: ["#29C6CD", "#FEA386", "#F19584"]%>
+  </div>
+  <div class="card-dashboard">
+    <h3>Expense by day</h3>
+      <%= column_chart Expense.group_by_day_of_week(:created_at, format: "%a").sum(:amount), ytitle:"Amount", width: "80%", height: "80%", colors: ["#29C6CD"] %>
+  </div>
 </div>

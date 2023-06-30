@@ -13,6 +13,7 @@
     <p id="description"><i class="fa-regular fa-comment-dots"></i> <%= @expense.description %></p>
     <p><i class="fa-solid fa-coins"></i> <%= @expense.amount %> €</p>
     <p><i class="fa-regular fa-calendar"></i> <%= @expense.created_at %></p>
+    <div class="link_to_back">
+      <%= link_to "Back to list", expenses_path, class:"button-add" %>
+    </div>
   </div>
-
-  <%= link_to "Back to list", expenses_path %>

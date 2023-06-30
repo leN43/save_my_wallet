@@ -13,4 +13,6 @@
 <%= turbo_frame_tag :expense_form do %>
 <% end %>
 
-<%= link_to "add an expense", new_expense_path, data:{turbo_frame: :expense_form} %>
+    <div class="link_to_back">
+        <%= link_to "add an expense", new_expense_path, data:{turbo_frame: :expense_form}, class:"button-add" %>
+    </div>
