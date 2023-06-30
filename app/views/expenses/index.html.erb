@@ -2,20 +2,17 @@
 <div class="cards-expenses">
   <h1>My expenses</h1>
   <i class="fa-solid fa-money-bill-wave fa-2xl"></i>
-<% @expenses.each do |expense| %>
-  <div class="card-expense" id="expense">
-    <h2><%= link_to expense.title ,expense_path(expense) %></h2>
-    <p><i><%= expense.category %></i></p>
-    <p><%= expense.amount %> €</p>
-  </div>
-<% end %>
+  <% @expenses.each do |expense| %>
+    <%= turbo_frame_tag :expenses do %>
+      <%= render "expense", expense: expense%>
+    <% end %>
+  <% end %>
 </div>
 
 
+<%= turbo_frame_tag :expense_form do %>
+<% end %>
+<%= link_to "add an expense", new_expense_path, data:{turbo_frame: :expense_form} %>
 
-<turbo-frame id="new_expenses">
-
-</turbo-frame>
 
 <%= link_to "Back to home", root_path %>
-<%= link_to "New expense", new_expense_path %>

@@ -9,14 +9,21 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
   end
 
-  def new; end
+  def new
+    @expense = Expense.new
+  end
 
   def edit; end
 
   def create
     @expense = Expense.new(expense_params)
+    @expense.user = current_user
+    @expense.building = Building.find_by(category: 'food')
     if @expense.save
-      redirect_to expenses_path, status: :see_other
+      respond_to do |format|
+        format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,6 +44,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:title, :amount, :category)
+    params.require(:expense).permit(:title, :amount, :category, :description)
   end
 end
