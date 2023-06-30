@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-  <% if current_user.city_id.nil? %>
-    <div class="col">
-      <div class="justify-content">
-      <h1> Welcome to your city </h1>
-      <p> You don't create your city !</p>
-      <%= link_to "create your city", new_city_path %>
-    </div>
-  <% else %>
-  <div data-controller="phaser">
-
+    <% if current_user.city_id.nil? %>
+      <div class="col">
+        <div class="justify-content">
+          <h1>Welcome to your city</h1>
+          <p>You haven't created your city yet!</p>
+          <%= link_to "Create your city", new_city_path%>
+        </div>
+      </div>
+    <% else %>
+      <div data-controller="phaser">
+      </div>
+    <% end %>
   </div>
-  </div>
-<% end %>
 </div>
