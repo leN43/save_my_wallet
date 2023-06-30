@@ -1,10 +1,29 @@
 import { Controller } from "@hotwired/stimulus"
 
+
 // Connects to data-controller="phaser"
 export default class extends Controller {
   connect() {
+    const config = {
+      type: Phaser.AUTO,
+      width: 800,
+      height: 600,
+      physics: {
+          default: 'arcade',
+          arcade: {
+              gravity: { y: 200 }
+          }
+      },
+      scene: Example
+    };
 
-    class Example extends Phaser.Scene
+    const game = new Phaser.Game(config);
+    game.scene.start('Example');
+  }
+}
+
+
+class Example extends Phaser.Scene
 {
     constructor ()
     {
@@ -19,6 +38,7 @@ export default class extends Controller {
         this.load.image('logo', 'assets/sprites/phaser3-logo.png');
         this.load.image('red', 'assets/particles/red.png');
     }
+
     create ()
     {
         this.add.image(400, 300, 'sky');
@@ -37,21 +57,4 @@ export default class extends Controller {
 
         particles.startFollow(logo);
     }
-}
-
-    const config = {
-      type: Phaser.AUTO,
-      width: 800,
-      height: 600,
-      physics: {
-          default: 'arcade',
-          arcade: {
-              gravity: { y: 200 }
-          }
-      },
-      scene: Example
-  };
-
-  const game = new Phaser.Game(config);
-  }
 }
