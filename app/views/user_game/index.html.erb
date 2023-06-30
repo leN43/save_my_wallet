@@ -1,21 +1,20 @@
 <div class="user-game-cards">
   <h1> Your challenges </h1>
-      <p> Hello, <%= current_user.nickname%>! <br> </p>
-    <div class="user-game-card">
-      <% if current_user.user_game_id.nil? %>
-        <p> You have no challenges yet! </p>
-      <% else %>
+  <p> Hello, <%= current_user.nickname%>! <br> </p>
+  <div class="user-game-card">
+    <% if current_user.user_game_id.nil? %>
+      <p> You have no challenges yet! </p>
+    <% else %>
       <p>All your challenges : </p>
-        <% @user_challenges.each do |challenge| %>
-            <h3> <%= link_to challenge.title, challenge_path(challenge) %> </h3>
-            <h3> <%= challenge.level %> </h3>
-          </div>
+      <% @user_challenges.each do |challenge| %>
+        <%= turbo_frame_tag :challenges do %>
+          <%= render "challenge", challenge: challenge %>
         <% end %>
       <% end %>
-    </div>
-  <%= turbo_frame_tag :challenges do %>
+    <% end %>
+  </div>
+  <%= turbo_frame_tag :challenge_form do %>
   <% end %>
-  <%= link_to "add a challenge",  new_user_game_path, data:{turbo_frame: :challenges}, class: "button-add-challenge" %>
+  <br>
+  <%= link_to "add a challenge",  new_user_game_path, data:{turbo_frame: :challenge_form} %>
 </div>
-
-<%= link_to "Back to home", root_path %>

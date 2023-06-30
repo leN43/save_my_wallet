@@ -15,7 +15,6 @@ class UserGameController < ApplicationController
   def new
     @challenges = Challenge.all
     @user_game = UserGame.new
-    @challenge = Challenge.new
   end
 
   def create
