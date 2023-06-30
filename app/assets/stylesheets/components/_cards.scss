@@ -67,3 +67,24 @@
     font-size: 20px;
   }
 }
+
+.cards-dahsboard {
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 310px;
+  margin: 28px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+
+
+  h1 {
+    border-bottom: 2px solid;
+    margin-bottom: 15px;
+    padding: 12px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,7 @@
+<div class="cards-dahsboard">
+  <h1> <%= @user.nickname %> dashboard</h1>
+  <%= pie_chart Expense.group(:category).count %>
+
+
+
+</div>
