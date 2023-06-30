@@ -3,13 +3,19 @@
   <h1>My expenses</h1>
   <i class="fa-solid fa-money-bill-wave fa-2xl"></i>
 <% @expenses.each do |expense| %>
-  <div class="card-expense">
+  <div class="card-expense" id="expense">
     <h2><%= link_to expense.title ,expense_path(expense) %></h2>
     <p><i><%= expense.category %></i></p>
     <p><%= expense.amount %> €</p>
   </div>
 <% end %>
 </div>
+
+
+
+<turbo-frame id="new_expenses">
+
+</turbo-frame>
 
 <%= link_to "Back to home", root_path %>
 <%= link_to "New expense", new_expense_path %>
