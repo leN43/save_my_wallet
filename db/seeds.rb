@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # Expense.create!(name: "Rent", amount: 1000, date: "2021-09-01")
 
-User.destroy_all
 Building.destroy_all
 Expense.destroy_all
 Challenge.destroy_all
 City.destroy_all
+User.destroy_all
 
 # Create User
 User.create!(email: "liloo@lewagon.com", password: "123456", nickname: "Liloo", first_name: "Liloo", last_name: "Liloo")
