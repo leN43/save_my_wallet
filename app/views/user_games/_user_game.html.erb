@@ -1,0 +1,7 @@
+<div class="user-game-card" id="user_game">
+  <% challenge = Challenge.find(user_game.challenge_id) %>
+  <h2><%= link_to challenge.title ,challenge_path(challenge), data: {turbo: false} %></h2>
+  <%= content_tag(:i,'', class:all_categories_with_icon[challenge.category]) %>
+  <p><%= user_game.status==false? ? "Not Achieved" : "Achieved" %></p>
+  <% raise %>
+</div>

@@ -95,7 +95,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_01_153521) do
   end
 
   create_table "user_games", force: :cascade do |t|
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "finished_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
