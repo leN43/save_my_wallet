@@ -117,16 +117,3 @@ expenses.each do |expense|
     expense_date: expense[:expense_date]
   )
 end
-
-# # City Seed
-# cities = [
-  #   { name: "Bikini Bottom", level: 3, user_id: User.first.id }
-  # ]
-
-  # cities.each do |city|
-  #   City.create!(
-    #     name: city[:name],
-    #     level: city[:level],
-    #     user_id: city[:user_id]
-    #   )
-    # end
