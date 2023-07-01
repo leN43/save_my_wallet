@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     @expense.user = current_user
-    @expense.building = Building.find_by(category: 'food')
+    @expense.building = Building.find_by(category: @expense.category)
     if @expense.save
       respond_to do |format|
         format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
@@ -44,6 +44,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:title, :amount, :category, :description)
+    params.require(:expense).permit(:title, :amount, :category, :description, :expense_date)
   end
 end
