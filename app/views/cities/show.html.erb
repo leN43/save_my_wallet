@@ -1,5 +1,5 @@
 <div class="container">
-    <% if current_user.city_id.nil? %>
+    <% if City.where(user_id: current_user).empty? %>
       <div class="container-text">
         <div class="justify-content">
           <h1>Welcome to your city</h1>

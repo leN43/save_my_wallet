@@ -1,13 +1,14 @@
 Expense.destroy_all
 Building.destroy_all
+UserGame.destroy_all
 Challenge.destroy_all
-User.destroy_all
 City.destroy_all
+User.destroy_all
 
 # Create User
 users = [
-  { nickname: 'Liloo', first_name: 'Liloo', last_name: 'Liloo', email: 'liloo@lewagon.com', password: "lewagon", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, city_id: nil, user_game_id: nil, created_at: DateTime.now, updated_at: DateTime.now },
-  { nickname: 'Zazou', first_name: 'Elsa', last_name: 'Blanc', email: 'zazou@lewagon.com', password: "lewagon", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, city_id: nil, user_game_id: nil, created_at: DateTime.now, updated_at: DateTime.now },
+  { nickname: 'Liloo', first_name: 'Liloo', last_name: 'Liloo', email: 'liloo@lewagon.com', password: "lewagon"},
+  { nickname: 'Zazou', first_name: 'Elsa', last_name: 'Blanc', email: 'zazou@lewagon.com', password: "lewagon"},
 ]
 
 users.each do |user|
@@ -17,10 +18,6 @@ users.each do |user|
     password: user[:password],
     last_name: user[:last_name],
     email: user[:email],
-    city_id: user[:city_id],
-    user_game_id: user[:user_game_id],
-    created_at: user[:created_at],
-    updated_at: user[:updated_at]
   )
 end
 
