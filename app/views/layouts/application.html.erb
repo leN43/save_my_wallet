@@ -21,8 +21,7 @@
   <body>
     <%= render "shared/flashes" %>
       <%= yield %>
-    <div class="navigation-button-container">
-    <%= render "shared/navigation_button" %>
+    <%= render "shared/navbar" %>
     <script>
       $(document).ready(function() {
         $('.close').click(function() {
@@ -30,6 +29,6 @@
         });
       });
     </script>
-    </div>
+
   </body>
 </html>
