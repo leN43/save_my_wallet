@@ -14,6 +14,7 @@ module ApplicationHelper
 
   # Icon for each category
 
+
   def all_categories_with_icon
     {
       'health'=> "#{icon_class('heartbeat')}", # health
