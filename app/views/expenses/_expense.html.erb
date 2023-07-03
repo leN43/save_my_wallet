@@ -1,6 +1,6 @@
 <div class="card-expense" id="expense">
-    <h2><%= link_to expense.title ,expense_path(expense), data: {turbo: false} %></h2>
-    <p><i><%= expense.category %></i></p>
+    <p><%= content_tag(:i,'', class:all_categories_with_icon[expense.category]) %></p>
+    <h2 id="title"><%= link_to expense.title ,expense_path(expense), data: {turbo: false} %></h2>
     <p><%= expense.amount %> €</p>
-    <p><%= date_format(expense.expense_date)%></p>
+    <p id="date"><%= date_format_expenses(expense.expense_date)%></p>
 </div>
