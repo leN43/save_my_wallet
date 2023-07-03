@@ -3,6 +3,9 @@ class ExpensesController < ApplicationController
 
   def index
     @expenses = Expense.all
+    if params[:filter]
+      @expenses = Expense.select { |e| e.expense_date.month == params[:filter][:month].to_i }
+    end
   end
 
   def show
