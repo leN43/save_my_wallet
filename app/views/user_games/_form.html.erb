@@ -1,0 +1,6 @@
+<% @challenges.each do |challenge| %>
+  <%= simple_form_for @user_game do |f| %>
+    <%= f.input :challenge_id, as: :hidden, input_html: {value: challenge.id} %>
+    <%= f.button :submit, challenge.title, data: {turbo_frame: :user_game_form}, class: "button-add" %>
+  <% end %>
+<% end %>

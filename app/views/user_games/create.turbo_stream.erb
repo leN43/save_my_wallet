@@ -1,0 +1,2 @@
+<%= turbo_stream.before :user_game, partial: "user_game/user_game", locals:{user_game: @user_game} %>
+<%= turbo_stream.replace :user_game_form, "" %>

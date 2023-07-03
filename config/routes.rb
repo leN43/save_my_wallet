@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     # resources :user_game, only: %i[new create destroy]
   # end
   resources :expenses
-  resources :user_game # , only: %i[index show destroy]
+  resources :user_games # , only: %i[index show destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

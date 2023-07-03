@@ -42,7 +42,7 @@ class CitiesController < ApplicationController
 
   def set_city
     if current_user.city_id.nil?
-      @city = []
+      @city = nil
     else
       @city = City.includes(:user).find(current_user.city_id)
     end
