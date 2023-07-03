@@ -1,9 +1,10 @@
 <div class="cards-challenges">
-  <h1><%= @challenge.title %></h1>
+  <h1><%= @user_game.challenge.title %></h1>
     <div class="card-challenges-show">
-      <h2><%= @challenge.description %></h2>
-      <h2><%= @challenge.badge %></h2>
-      <p><%= @challenge.level %></p>
+      <h2><%= @user_game.challenge.description %></h2>
+      <h2><%= @user_game.challenge.badge %></h2>
+      <p><%= @user_game.challenge.level %></p>
+      <p><%= @user_game.status==false ? "Not Achieved" : "Achieved" %></p>
     </div>
-    <%= link_to 'Back to your challenges', user_game_index_path %>
+    <%= link_to 'Back to your challenges', user_games_path %>
 </div>

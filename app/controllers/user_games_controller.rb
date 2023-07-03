@@ -20,7 +20,7 @@ class UserGamesController < ApplicationController
   def create
     @user_game = UserGame.new(user_game_params)
     @user_game.user_id = current_user.id
-    @user_game.challenge_id = params[:challenge_id]
+    @user_game.challenge_id = params[:user_game][:challenge_id]
     @user_game.status = false
     if @user_game.save!
       redirect_to user_game_path(@user_game)
@@ -40,7 +40,7 @@ class UserGamesController < ApplicationController
   private
 
   def user_game_params
-    params.require(:user_game).permit(:user_id, :status, :challenge_id)
+    params.require(:user_game).permit(:user_id, :challenge_id)
   end
 
   def set_challenge
