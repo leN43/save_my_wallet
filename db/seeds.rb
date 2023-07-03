@@ -1,5 +1,5 @@
-Building.destroy_all
 Expense.destroy_all
+Building.destroy_all
 UserGame.destroy_all
 Challenge.destroy_all
 City.destroy_all
