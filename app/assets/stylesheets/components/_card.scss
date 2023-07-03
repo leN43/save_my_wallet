@@ -2,17 +2,26 @@
 .card-expense {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
   h2 {
     padding: 1px 5px;
-    font-size: 24px;
+    font-size: 20px;
   }
   p {
     padding: 1px 5px;
-    font-size: 19px;
+    font-size: 17px;
   }
 
   a {
     color: $light-blue;
+  }
+  #title {
+    width: 126px;
+  }
+
+  #date {
+    font-size: 14px;
   }
 }
 
@@ -36,7 +45,7 @@
   #category {
     text-align: center;
     font-style: italic;
-    color: $red-pastel;
+    color: $saumon;
   }
 
   #description {
@@ -45,7 +54,7 @@
   }
 
   i {
-    color: $red-pastel;
+    color: $saumon;
   }
 }
 
@@ -86,7 +95,11 @@
   }
   p {
     padding: 4px 5px;
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  #icon {
+    color: $saumon;
   }
 }
 

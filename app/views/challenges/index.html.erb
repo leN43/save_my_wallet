@@ -3,7 +3,7 @@
     <p> Hello, <%= current_user.nickname%>! Here are all the challenges avaible for your city :  </p>
     <% @challenges.each do |challenge| %>
     <div class="card-challenges">
-          <%= content_tag(:i,'', class:all_categories_with_icon[challenge.category]) %>
+          <p id="icon"><%= content_tag(:i,'', class:all_categories_with_icon[challenge.category]) %></p>
           <p> <%= link_to challenge.title, challenge_path(challenge) %> </p>
           <p><i class="fa-solid fa-arrow-trend-up"></i> <%= challenge.level %> </p>
     </div>

@@ -1,4 +1,4 @@
-  <div class="card-expense-show">
+<div class="card-expense-show">
     <h2><%= @expense.title %></h2>
     <p id="category"> <%= @expense.category %> </p>
     <p id="description"><i class="fa-regular fa-comment-dots"></i> <%= @expense.description %></p>
@@ -6,4 +6,6 @@
     <p><i class="fa-regular fa-calendar"></i> <%= @expense.created_at %></p>
   </div>
 
-  <%= link_to "Back to list", expenses_path %>
+  <div class="link_to_back">
+    <%= link_to "Back to list", expenses_path, class:"button-add"%>
+  </div>

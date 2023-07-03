@@ -2,6 +2,21 @@
 <div class="cards-expenses">
   <h1>My expenses</h1>
   <i class="fa-solid fa-money-bill-wave fa-2xl"></i>
+  <%= form_with url: expenses_path, method: :get do |form| %>
+    <%= select_tag "filter[month]", raw("<option value=1 #{'selected' if params[:filter]&.[](:month) == 'Jan'}>Jan</option>
+    <option value=2 #{'selected' if params[:filter]&.[](:month) == 'Feb'}>Feb</option>
+    <option value=3 #{'selected' if params[:filter]&.[](:month) == 'March'}>March</option>
+    <option value=4 #{'selected' if params[:filter]&.[](:month) == 'April'}>April</option>
+    <option value=5 #{'selected' if params[:filter]&.[](:month) == 'May'}>May</option>
+    <option value=6 #{'selected' if params[:filter]&.[](:month) == 'June'}>June</option>
+    <option value=7 #{'selected' if params[:filter]&.[](:month) == 'July'}>July</option>
+    <option value=8 #{'selected' if params[:filter]&.[](:month) == 'Aug'}>Aug</option>
+    <option value=9 #{'selected' if params[:filter]&.[](:month) == 'Sept'}>Sept</option>
+    <option value=10 #{'selected' if params[:filter]&.[](:month) == 'Oct'}>Oct</option>
+    <option value=11 #{'selected' if params[:filter]&.[](:month) == 'Nov'}>Nov</option>
+    <option value=12 #{'selected' if params[:filter]&.[](:month) == 'Dec'}>Dec</option>"), prompt: "month", class: "select required" %>
+    <%= submit_tag "search" %>
+  <% end %>
   <% @expenses.each do |expense| %>
     <%= turbo_frame_tag :expenses do %>
       <%= render "expense", expense: expense%>
@@ -13,6 +28,6 @@
 <%= turbo_frame_tag :expense_form do %>
 <% end %>
 
-    <div class="link_to_back">
-        <%= link_to "add an expense", new_expense_path, data:{turbo_frame: :expense_form}, class:"button-add" %>
-    </div>
+<div class="link_to_back">
+  <%= link_to "add an expense", new_expense_path, data:{turbo_frame: :expense_form}, class:"button-add" %>
+</div>

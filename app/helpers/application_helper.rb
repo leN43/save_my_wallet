@@ -5,7 +5,11 @@ module ApplicationHelper
 
   # change format
   def date_format(date)
-    date.strftime('%d %b %Y')
+    date.strftime('%d %b %y')
+  end
+
+  def date_format_expenses(date)
+    date.strftime('%d %b')
   end
 
   def number_to_euro(number)
@@ -13,6 +17,7 @@ module ApplicationHelper
   end
 
   # Icon for each category
+
 
   def all_categories_with_icon
     {
