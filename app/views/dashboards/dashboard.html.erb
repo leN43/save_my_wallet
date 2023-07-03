@@ -6,6 +6,6 @@
   </div>
   <div class="card-dashboard">
     <h3>Expense by day</h3>
-      <%= column_chart Expense.group_by_day_of_week(:created_at, format: "%a").sum(:amount), ytitle:"Amount", width: "80%", height: "80%", colors: ["#29C6CD"] %>
+      <%= column_chart Expense.group_by_day_of_week(:expense_date, format: "%a").sum(:amount), ytitle:"Amount", width: "80%", height: "80%", colors: ["#29C6CD"] %>
   </div>
 </div>

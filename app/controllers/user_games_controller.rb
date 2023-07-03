@@ -1,6 +1,6 @@
-class UserGameController < ApplicationController
+class UserGamesController < ApplicationController
   before_action :set_user_game, only: %i[show destroy]
-  before_action :set_challenge, only: %i[create]
+
 
   def index
     @user_games = UserGame.all
@@ -18,9 +18,10 @@ class UserGameController < ApplicationController
   end
 
   def create
-    @user_game.challenge_id = @challenge.id
-    @user_game.user_id = current_user.id
     @user_game = UserGame.new(user_game_params)
+    @user_game.user_id = current_user.id
+    @user_game.challenge_id = params[:user_game][:challenge_id]
+    @user_game.status = false
     if @user_game.save!
       redirect_to user_game_path(@user_game)
       current_user.update(user_game_id: @user_game.id)

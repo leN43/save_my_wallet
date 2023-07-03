@@ -1,9 +1,10 @@
 <div class="container-new-expense">
   <%= simple_form_for @expense do |f| %>
     <%= f.input :title %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: all_categories  %>
     <%= f.input :description %>
-    <%= f.input :amount %>
+    <%= f.input :amount, as: :integer%>
+    <%= f.input :expense_date, as: :date %>
     <%= f.button :submit, class: "button-add", style: "margin:auto" %>
   <% end %>
 </div>

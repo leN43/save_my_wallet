@@ -2,4 +2,5 @@
     <h2><%= link_to expense.title ,expense_path(expense), data: {turbo: false} %></h2>
     <p><i><%= expense.category %></i></p>
     <p><%= expense.amount %> €</p>
+    <p><%= date_format(expense.expense_date)%></p>
 </div>
