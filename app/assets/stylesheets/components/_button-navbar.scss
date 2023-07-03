@@ -1,8 +1,5 @@
 
-.navigation-button-container {
-  text-align: center;
-  width: 100%;
-}
+
 ul {
   -moz-transform: scale(0.2);
   -ms-transform: scale(0.2);
@@ -16,9 +13,11 @@ ul {
   margin: 0;
   padding: 0;
   position: relative;
+  bottom: 90px;
   display: inline-block;
   width: 200px;
   height: 200px;
+  z-index: 2;
 }
 ul li {
   position: absolute;
@@ -77,12 +76,14 @@ ul li:nth-child(2) a:hover {
   background: #F6E4C4;
   color: #FEA386;
 }
+
+
 ul li:nth-child(3) {
   display: block;
-  -moz-transform: rotate(180deg) skew(30deg);
-  -ms-transform: rotate(180deg) skew(30deg);
-  -webkit-transform: rotate(180deg) skew(30deg);
-  transform: rotate(180deg) skew(30deg);
+  -moz-transform: rotate(360deg) skew(30deg);
+  -ms-transform: rotate(360deg) skew(30deg);
+  -webkit-transform: rotate(360deg) skew(30deg);
+  transform: rotate(360deg) skew(30deg);
 }
 ul li:nth-child(3) a {
   line-height: 50px;
@@ -92,60 +93,6 @@ ul li:nth-child(3) a {
   transform: skew(-30deg) rotate(-60deg);
 }
 ul li:nth-child(3) a:hover {
-  background: #F6E4C4;
-  color: #FEA386;
-}
-ul li:nth-child(4) {
-  display: block;
-  -moz-transform: rotate(240deg) skew(30deg);
-  -ms-transform: rotate(240deg) skew(30deg);
-  -webkit-transform: rotate(240deg) skew(30deg);
-  transform: rotate(240deg) skew(30deg);
-}
-ul li:nth-child(4) a {
-  line-height: 50px;
-  -moz-transform: skew(-30deg) rotate(-60deg);
-  -ms-transform: skew(-30deg) rotate(-60deg);
-  -webkit-transform: skew(-30deg) rotate(-60deg);
-  transform: skew(-30deg) rotate(-60deg);
-}
-ul li:nth-child(4) a:hover {
-  background: #F6E4C4;
-  color: #FEA386;
-}
-ul li:nth-child(5) {
-  display: block;
-  -moz-transform: rotate(300deg) skew(30deg);
-  -ms-transform: rotate(300deg) skew(30deg);
-  -webkit-transform: rotate(300deg) skew(30deg);
-  transform: rotate(300deg) skew(30deg);
-}
-ul li:nth-child(5) a {
-  line-height: 50px;
-  -moz-transform: skew(-30deg) rotate(-60deg);
-  -ms-transform: skew(-30deg) rotate(-60deg);
-  -webkit-transform: skew(-30deg) rotate(-60deg);
-  transform: skew(-30deg) rotate(-60deg);
-}
-ul li:nth-child(5) a:hover {
-  background: #F6E4C4;
-  color: #FEA386;
-}
-ul li:nth-child(6) {
-  display: block;
-  -moz-transform: rotate(360deg) skew(30deg);
-  -ms-transform: rotate(360deg) skew(30deg);
-  -webkit-transform: rotate(360deg) skew(30deg);
-  transform: rotate(360deg) skew(30deg);
-}
-ul li:nth-child(6) a {
-  line-height: 50px;
-  -moz-transform: skew(-30deg) rotate(-60deg);
-  -ms-transform: skew(-30deg) rotate(-60deg);
-  -webkit-transform: skew(-30deg) rotate(-60deg);
-  transform: skew(-30deg) rotate(-60deg);
-}
-ul li:nth-child(6) a:hover {
   background: #F6E4C4;
   color: #FEA386;
 }
