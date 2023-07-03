@@ -31,7 +31,6 @@ class CitiesController < ApplicationController
     @city = City.new(city_params)
     if @city.save
       redirect_to city_path(@city), status: :see_other
-      current_user.update(city_id: @city.id)
 
     else
       render :new, status: :unprocessable_entity
@@ -41,10 +40,10 @@ class CitiesController < ApplicationController
   private
 
   def set_city
-    if current_user.city_id.nil?
+    if City.where(user_id: current_user).nil?
       @city = nil
     else
-      @city = City.includes(:user).find(current_user.city_id)
+      @city = City.includes(:user).where(user_id: current_user)
     end
   end
 

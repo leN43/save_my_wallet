@@ -3,7 +3,7 @@
   <p>Hello, <%= current_user.nickname %>!<br></p>
 
   <div class="user-game-card">
-    <% if current_user.user_game_id.nil? %>
+    <% if UserGame.where(user_id: current_user).empty? %>
       <p>You have no challenges yet!</p>
     <% else %>
       <p>All your challenges:</p>
