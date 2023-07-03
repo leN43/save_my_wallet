@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrap-game-container">
     <% if City.where(user_id: current_user).empty? %>
       <div class="container-text">
         <div class="justify-content">
@@ -8,8 +8,7 @@
         </div>
       </div>
     <% else %>
-      <div class="container " data-controller="phaser">
-      <h3 class="text-center">Don't worry <%= current_user.nickname %>, our dream team is working on your game plateform !</h3>
+      <div class="city-container" data-controller="phaser">
       </div>
     <% end %>
 </div>

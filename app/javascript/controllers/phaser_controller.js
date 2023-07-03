@@ -1,61 +1,55 @@
 import { Controller } from "@hotwired/stimulus"
 
 
-// Connects to data-controller="phaser"
 export default class extends Controller {
   connect() {
+    console.log(this)
     const config = {
-      type: Phaser.AUTO,
-      width: 800,
-      height: 600,
-      physics: {
-          default: 'arcade',
-          arcade: {
-              gravity: { y: 200 }
-          }
-      },
-      scene: Example
-    };
-
+    type: Phaser.AUTO,
+    width: 360,
+    height: 730,
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 10 },
+      }
+    },
+    scene: {
+      preload: this.preload,
+      create: this.create,
+      update: this.update
+  }
+  };
     const game = new Phaser.Game(config);
     this.element.appendChild(game.canvas);
-    game.scene.start('Example');
+    game.scene.start();
+
+
   }
-}
 
 
-class Example extends Phaser.Scene
-{
-    constructor ()
-    {
-        super();
+    preload() {
+      this.load.image('background', 'https://res.cloudinary.com/dgyeheb95/image/upload/v1688389322/background_lkij73.jpg');
+      this.load.image('store1', 'https://res.cloudinary.com/dgyeheb95/image/upload/v1688395588/store_1_kwsoho.png')
+      this.load.image('food1', 'https://res.cloudinary.com/dgyeheb95/image/upload/v1688395561/pizzeria_j6nz4z.png')
     }
 
-    preload ()
-    {
-        this.load.setBaseURL('https://labs.phaser.io');
+    create() {
+      //Background image
+      const backgroundImage = this.add.image(180, 365, 'background');
+      backgroundImage.setDisplaySize(this.sys.game.config.width, this.sys.game.config.height);
 
-        this.load.image('sky', 'assets/skies/space3.png');
-        this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-        this.load.image('red', 'assets/particles/red.png');
+      //store level 1
+      const store1 = this.add.image(270,550, 'store1');
+      store1.setDisplaySize(55, 60);
+
+      const food1 = this.add.image(130,300, 'food1');
+      food1.setDisplaySize(55, 60);
     }
 
-    create ()
-    {
-        this.add.image(400, 300, 'sky');
 
-        const particles = this.add.particles(0, 0, 'red', {
-            speed: 100,
-            scale: { start: 1, end: 0 },
-            blendMode: 'ADD'
-        });
 
-        const logo = this.physics.add.image(400, 100, 'logo');
-
-        logo.setVelocity(100, 200);
-        logo.setBounce(1, 1);
-        logo.setCollideWorldBounds(true);
-
-        particles.startFollow(logo);
+    update() {
     }
+
 }
