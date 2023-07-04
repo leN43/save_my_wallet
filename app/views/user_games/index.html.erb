@@ -8,19 +8,17 @@
     <% else %>
       <p>All your challenges:</p>
       <% @user_games.each do |user_game| %>
-        <%= turbo_frame_tag :user_game do %>
+        <%= turbo_frame_tag :user_games do %>
           <%= render "user_game", user_game: user_game %>
         <% end %>
       <% end %>
     <% end %>
   </div>
 
+</div>
   <%= turbo_frame_tag :user_game_form do %>
   <% end %>
 
   <div class="link_to_back">
       <%= link_to "add a challenge", new_user_game_path , data:{turbo_frame: :user_game_form}, class:"button-add" %>
   </div>
-
-
-</div>
