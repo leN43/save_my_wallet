@@ -24,27 +24,27 @@ end
 # Buildings Seed
 buildings = [
   # level 1
-  { name: 'Brewery', category: 'food', level: 1 },
-  { name: 'Fashion Store', category: 'shopping', level: 1 },
-  { name: 'Medical Office', category: 'health', level: 1 },
+  { name: 'Brewery', category: 'food', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395488/bakery_zvmuom.png"},
+  { name: 'Fashion Store', category: 'shopping', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395588/store_1_kwsoho.png"  },
+  { name: 'Medical Office', category: 'health', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395523/pharmacy_hhfxuv.png" },
   { name: 'City Hall', category: 'income', level: 1 },
-  { name: 'Swimming Pool', category: 'hobbies', level: 1 },
+  { name: 'HobbiesHome', category: 'hobbies', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395486/book_store_c13m9l.png" },
   { name: 'Bank', category: 'regular-expenses', level: 1 },
-  { name: 'Train Station', category: 'travel', level: 1 },
+  { name: 'Train Station', category: 'travel', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395560/hotel_ttlbwy.png" },
   # level 2
-  { name: 'Restaurant', category: 'food', level: 2 },
-  { name: 'Big Fashion Store', category: 'shopping', level: 2 },
-  { name: 'Hospital', category: 'health', level: 2 },
-  { name: 'Prefecture', category: 'income', level: 2 },
-  { name: 'Sports Complex', category: 'hobbies', level: 2 },
-  { name: 'Regional Bank', category: 'regular-expenses', level: 2 },
+  { name: 'Restaurant', category: 'food', level: 2, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395561/pizzeria_j6nz4z.png" },
+  { name: 'Big Fashion Store', category: 'shopping', level: 2, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395583/shop_2_qajrkd.png" },
+  { name: 'Hospital', category: 'health', level: 2, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395511/hospital_cf8bep.png"  },
+  { name: 'Prefecture', category: 'income', level: 2 , photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395603/university_mx091q.png"},
+  { name: 'Sports Complex', category: 'hobbies', level: 2, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395498/flowers_liaq7e.png"},
+  { name: 'Regional Bank', category: 'regular-expenses', level: 2},
   { name: 'TGV Station', category: 'travel', level: 2 },
   # level 3
-  { name: '(star) Restaurant', category: 'food', level: 3 },
-  { name: 'National Fashion Store', category: 'shopping', level: 3 },
-  { name: 'Regional Hospital', category: 'health', level: 3 },
+  { name: '(star) Restaurant', category: 'food', level: 3, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395545/pizza_beahc_dvzxxc.png" },
+  { name: 'National Fashion Store', category: 'shopping', level: 3, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395484/fashion_boutik_hpc539.png" },
+  { name: 'Regional Hospital', category: 'health', level: 3, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395511/hospital_cf8bep.png" },
   { name: 'Ministry', category: 'income', level: 3 },
-  { name: 'National Stadium', category: 'hobbies', level: 3 },
+  { name: 'National Stadium', category: 'hobbies', level: 3 , photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395503/gym_z53wg1.png" },
   { name: 'National Bank', category: 'regular-expenses', level: 3 },
   { name: 'Airport', category: 'travel', level: 3 }
 ]
