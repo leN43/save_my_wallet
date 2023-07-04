@@ -98,6 +98,7 @@
   margin: 28px auto;
   padding: 10px;
   background-color: white;
+  overflow: scroll;
 
   h1 {
     display: flex;
@@ -106,5 +107,9 @@
     border-bottom: 2px dashed;
     margin-bottom: 15px;
     padding: 12px;
+  }
+
+  .test {
+    margin-top: 15px;
   }
 }

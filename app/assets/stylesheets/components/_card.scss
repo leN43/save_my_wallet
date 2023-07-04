@@ -70,14 +70,33 @@
     padding: 1px 5px;
     font-size: 19px;
   }
+
+  a {
+    color: $light-blue;
+  }
+
+  i {
+    color: $saumon;
+    font-size: 22px;
+  }
 }
 
 .user-game-card-show {
-  border-radius: 6px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  width: 310px;
-  margin: 28px auto;
-  padding: 7px;
+  a {
+    color: $light-blue;
+  }
+  h2 {
+    padding: 1px 5px;
+    font-size: 28px;
+  }
+  p {
+    padding: 4px 5px;
+    font-size: 20px;
+  }
+
+  i {
+    color: $saumon;
+  }
 }
 
 // Card challenges
@@ -144,12 +163,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 
   h3 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-top: 14px;
     text-align: center;
   }
 
+  canvas {
+    margin-top: 14px;
+  }
 }
