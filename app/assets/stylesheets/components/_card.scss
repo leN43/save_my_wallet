@@ -70,6 +70,15 @@
     padding: 1px 5px;
     font-size: 19px;
   }
+
+  a {
+    color: $light-blue;
+  }
+
+  i {
+    color: $saumon;
+    font-size: 22px;
+  }
 }
 
 .user-game-card-show {
@@ -104,17 +113,10 @@
 }
 
 .card-challenges-show {
-  border-radius: 6px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  width: 310px;
-  margin: 28px auto;
-  padding: 7px;
-  background-color: white;
-
   h2 {
     text-align: center;
     font-size: 28px;
-    border-bottom: 2px solid;
+    // border-bottom: 2px solid;
     padding: 12px;
   }
 

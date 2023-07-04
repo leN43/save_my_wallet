@@ -31,6 +31,13 @@ module ApplicationHelper
     }
   end
 
+  def achieved_or_not
+    {
+      true => "#{icon_class('check')}",
+      false => "#{icon_class('xmark')}"
+    }
+  end
+
   private
   def icon_class(icon)
     "fa-solid fa-#{icon}"
