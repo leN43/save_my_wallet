@@ -22,9 +22,11 @@ class UserGamesController < ApplicationController
     @user_game.user_id = current_user.id
     @user_game.challenge_id = params[:user_game][:challenge_id]
     @user_game.status = false
-    if @user_game.save!
-      redirect_to user_game_path(@user_game)
-      current_user.update(user_game_id: @user_game.id)
+    if @user_game.save
+      respond_to do |format|
+        format.html { redirect_to user_games_path }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,8 +35,11 @@ class UserGamesController < ApplicationController
   def show; end
 
   def destroy
-    @user_game.destroy
-    redirect_to user_game_path
+    if @user_game.destroy
+      redirect_to user_games_path
+    else
+      render :index
+    end
   end
 
   private

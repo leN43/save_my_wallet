@@ -38,6 +38,13 @@ module ApplicationHelper
     }
   end
 
+  def delete_icon
+    "#{icon_class('trash-can')}"
+  end
+
+  def edit_icon
+    "#{icon_class('edit')}"
+  end
   private
   def icon_class(icon)
     "fa-solid fa-#{icon}"
