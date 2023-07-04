@@ -1,5 +1,6 @@
-<div class="user-game-card" id="user_game">
-  <% challenge = Challenge.find(user_game.challenge_id) %>
-  <h2><%= link_to challenge.title ,user_game_path(user_game), data: {turbo: false} %></h2>
-  <%= content_tag(:i,'', class:all_categories_with_icon[challenge.category]) %>
-</div>
+<% challenge = Challenge.find(user_game.challenge_id) %>
+<h2><%= link_to challenge.title ,user_game_path(user_game), data: {turbo: false} %></h2>
+<%= content_tag(:i,'', class:all_categories_with_icon[challenge.category]) %>
+<%= link_to user_game_path(user_game), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+  <%= content_tag(:i,'', class:delete_icon) %>
+<% end %>
