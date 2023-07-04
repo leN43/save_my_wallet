@@ -24,7 +24,7 @@ end
 # Buildings Seed
 buildings = [
   # level 1
-  { name: 'Brewery', category: 'food', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395488/bakery_zvmuom.png"},
+  { name: 'Bakery', category: 'food', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395488/bakery_zvmuom.png"},
   { name: 'Fashion Store', category: 'shopping', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395588/store_1_kwsoho.png"  },
   { name: 'Medical Office', category: 'health', level: 1, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688395523/pharmacy_hhfxuv.png" },
   { name: 'City Hall', category: 'income', level: 1 },
