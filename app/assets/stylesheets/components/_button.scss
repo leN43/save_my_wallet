@@ -34,12 +34,17 @@
   border-radius: 50px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
   color: #fff;
-  cursor: pointer;
   padding: 8px;
+  margin: auto;
+}
 
-  :hover {
-    color: yellow;
-  }
+.button-add-challenge {
+  background-color: $light-blue;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 8px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  color: #fff;
+  padding: 8px;
 }
 
 // button help
