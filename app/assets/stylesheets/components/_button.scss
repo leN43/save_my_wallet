@@ -34,10 +34,20 @@
   border-radius: 50px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
   color: #fff;
-  cursor: pointer;
+  padding: 8px;
+  margin: auto;
+}
+
+.button-add-challenge {
+  background-color: $light-blue;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 8px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  color: #fff;
   padding: 8px;
 }
 
+<<<<<<< HEAD
 
 .sidenav {
   height: 95%;
@@ -91,4 +101,22 @@ margin-left: 250px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+=======
+// button help
+.button-help {
+  background-color: $saumon;
+  color: white;
+  border-radius: 50px;
+  padding: 10px;
+  position: absolute;
+  left: 9px;
+  bottom: 50px;
+  height: 41px;
+  width: 45px;
+  text-align: center;
+}
+
+.back {
+  width: 57px;
+>>>>>>> 41cea48c97618eb5262d796201b1bcfb7df5e539
 }

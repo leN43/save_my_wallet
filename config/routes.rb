@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
+  get '/help', to: 'help#help', as: :help
   resources :cities, except: %i[destroy]
   resources :challenges, only: %i[index show] # do
     # resources :user_game, only: %i[new create destroy]

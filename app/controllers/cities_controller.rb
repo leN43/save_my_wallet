@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[index show edit update]
+  before_action :set_expenses, only: [:show]
 
   def index
     if @city.nil?
@@ -13,7 +14,12 @@ class CitiesController < ApplicationController
     @city = City.new
   end
 
-  def show; end
+  def show
+    if @expenses.empty?
+      all_categories.each { |category| @expenses[category] = 0 }
+    end
+    @expenses
+  end
 
   def edit; end
 
@@ -38,6 +44,23 @@ class CitiesController < ApplicationController
   end
 
   private
+
+  def set_expenses
+    @total_category = {}
+    @expenses = Expense.where(user_id: current_user.id)
+    @expenses = @expenses.group_by(&:category).transform_values { |v| v.sum(&:amount) }
+    threshold = { '1' => 100, '2' => 500, '3' => 1000 }
+    @expenses.each do |category, _amount|
+      case @expenses[category]
+      when threshold['1']..threshold['2']
+        @total_category[category] = threshold['2']
+      when threshold['2']..threshold['3']
+        @total_category[category] = threshold['3']
+      when threshold['3']..Float::INFINITY
+        @total_category[category] = 10_000
+      end
+    end
+  end
 
   def set_city
     if City.where(user_id: current_user).nil?

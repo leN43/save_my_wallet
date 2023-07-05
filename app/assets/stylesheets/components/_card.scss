@@ -78,7 +78,17 @@
   i {
     color: $saumon;
     font-size: 22px;
+    padding: 0px 15px 25px 0px;
   }
+}
+
+.card-form-user-game {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+    margin-top: -22px;
 }
 
 .user-game-card-show {
@@ -172,5 +182,35 @@
 
   canvas {
     margin-top: 14px;
+  }
+}
+
+.card-help {
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 310px;
+  height: 563px;
+  margin: 28px auto;
+  padding: 10px;
+  background-color: white;
+  overflow: scroll;
+
+  h1 {
+    text-align: center;
+    font-size: 38px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  #desc {
+    text-align: center;
+    font-style: italic;
+  }
+
+  i {
+    color: $saumon;
+    font-size: 18px;
   }
 }
