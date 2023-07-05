@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[index show edit update]
-  before_action :set_expenses, only: [:show]
+  before_action :set_expenses, only: %i[show user_expenses]
 
   def index
     if @city.nil?
@@ -15,10 +15,7 @@ class CitiesController < ApplicationController
   end
 
   def show
-    if @expenses.empty?
-      all_categories.each { |category| @expenses[category] = 0 }
-    end
-    @expenses
+    @expenses.empty? ? @expenses = all_categories.each { |category| @expenses[category] = 0 } : @expenses
   end
 
   def edit; end
@@ -42,6 +39,7 @@ class CitiesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
 
   private
 

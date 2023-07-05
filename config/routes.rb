@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
   get '/help', to: 'help#help', as: :help
+  get '/buildings', to: 'buildings#index', as: :buildings
   resources :cities, except: %i[destroy]
   resources :challenges, only: %i[index show] # do
     # resources :user_game, only: %i[new create destroy]

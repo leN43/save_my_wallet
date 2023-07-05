@@ -6,6 +6,8 @@ class ExpensesController < ApplicationController
     if params[:filter]
       @expenses = Expense.select { |e| e.expense_date.month == params[:filter][:month].to_i }
     end
+
+    render json: @expenses
   end
 
   def show
