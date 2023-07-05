@@ -27,6 +27,7 @@ class ExpensesController < ApplicationController
         format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
         format.turbo_stream
       end
+      building_level(@expense.building, @expense.user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -51,21 +52,21 @@ class ExpensesController < ApplicationController
     params.require(:expense).permit(:title, :amount, :category, :description, :expense_date)
   end
 
-  def building_level
-    threshold = {
-      '1' => 100,
-      '2' => 500,
-      '3' => 1000,
-    }
+  def building_level(building, user)
+    threshold = { '1' => 100, '2' => 500, '3' => 1000 }
 
-    # Sum expense by category
-    expenses_by_category = Expense.where(user_id: current_user.id).group(:category).sum(:amount)
-
-    expenses_by_category.each do |category, amount|
-      if amount >= threshold[category]
-        building = Building.find_by(category: category)
-        building.level < 3 ? building.update!(level: building.level + 1) : building.update!(level: 3)
-      end
+    user_expenses_by_category_and_building = Expense.where(user_id: user.id).select(:building_id, :category, :amount)
+    expenses_by_category = user_expenses_by_category_and_building.group_by(&:category).transform_values { |v| v.sum(&:amount) }
+    case expenses_by_category[building.category]
+    when threshold['1']..threshold['2']
+      key = '1'
+    when threshold['2']..threshold['3']
+      key = '2'
+    when threshold['3']..Float::INFINITY
+      key = '3'
     end
+    id_new_building = Building.where(category: building.category, level: key).first.id
+    Expense.where(category: building.category, user_id: user.id).update_all(building_id: id_new_building)
+    pry.byebug
   end
 end

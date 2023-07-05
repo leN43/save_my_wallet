@@ -78,80 +78,38 @@ export default class extends Controller {
       const piggy = this.add.sprite(200, 650, 'piggy');
       piggy.setDisplaySize(80, 80);
 
+      // Fetch all Expense.building from the database
 
 
 
 
       // level 1
-      /*       const store1 = this.add.image(225,450, 'store 1').setDisplaySize(100, 80);
-      store1;
-      */
-     const food1 = this.add.image(160,300, 'food 1').setDisplaySize(100, 80);
-     food1;
+    const store1 = this.add.image(225,450, 'store 1').setDisplaySize(100, 80);
+    const food1 = this.add.image(160,300, 'food 1').setDisplaySize(100, 80);
+    const medical1 = this.add.image(75,220, 'medical 1').setDisplaySize(100, 80);
+    const income1 = this.add.image(290,220, 'income 1').setDisplaySize(120, 100);
+    const hobbies1 = this.add.image(290,550, 'hobbies 1').setDisplaySize(100, 80);
+    const bank1 = this.add.image(90,550, 'bank 1').setDisplaySize(100, 80);
+    const travel1 = this.add.image(225,65, 'travel 1').setDisplaySize(100, 80);
 
-      const medical1 = this.add.image(75,220, 'medical 1').setDisplaySize(100, 80);
-      medical1;
-
-/*       const income1 = this.add.image(290,220, 'income 1').setDisplaySize(120, 100);
-      income1;
- */
-      const hobbies1 = this.add.image(290,550, 'hobbies 1').setDisplaySize(100, 80);
-      hobbies1;
-
-      const bank1 = this.add.image(90,550, 'bank 1').setDisplaySize(100, 80);
-      bank1;
-
-      // const travel1 = this.add.image(225,65, 'travel 1').setDisplaySize(100, 80);
-      // travel1;
 
       // level 2
-      const store2 = this.add.image(225,450, 'store 2').setDisplaySize(105, 85);
-      store2;
-
-/*       const food2 = this.add.image(160,300, 'food 2').setDisplaySize(105, 85);
-      food2;
- */
-/*       const medical2 = this.add.image(75,210, 'medical 2').setDisplaySize(105, 85);
-      medical2;
- */
-      const income2 = this.add.image(290,210, 'income 2').setDisplaySize(125, 105);
-      income2;
-
-/*       const hobbies2 = this.add.image(290,540, 'hobbies 2').setDisplaySize(105, 85);
-      hobbies2;
- */
-/*       const bank2 = this.add.image(90,550, 'bank 2').setDisplaySize(105, 85);
-      bank2;
- */
-      const travel2 = this.add.image(225,65, 'travel 2').setDisplaySize(120, 85);
-      travel2;
+      // const store2 = this.add.image(225,450, 'store 2').setDisplaySize(105, 85);
+      // const food2 = this.add.image(160,300, 'food 2').setDisplaySize(105, 85);
+      // const medical2 = this.add.image(75,210, 'medical 2').setDisplaySize(105, 85);
+      // const income2 = this.add.image(290,210, 'income 2').setDisplaySize(125, 105);
+      // const hobbies2 = this.add.image(290,540, 'hobbies 2').setDisplaySize(105, 85);
+      // const bank2 = this.add.image(90,550, 'bank 2').setDisplaySize(105, 85);
+      // const travel2 = this.add.image(225,65, 'travel 2').setDisplaySize(120, 85);
 
       // level 3
-/*       const store3 = this.add.image(225,450, 'store 3').setDisplaySize(110, 90);
-      store3;
-
-      const food3 = this.add.image(160,300, 'food 3').setDisplaySize(110, 90);
-      food3;
-
-      const medical3 = this.add.image(75,220, 'medical 3').setDisplaySize(110, 90);
-      medical3;
-
-      const income3 = this.add.image(290,220, 'income 3').setDisplaySize(130, 110);
-      income3;
-
-      const hobbies3 = this.add.image(290,550, 'hobbies 3').setDisplaySize(120, 80);
-      hobbies3;
-
-      const bank3 = this.add.image(90,550, 'bank 3').setDisplaySize(110, 90);
-      bank3;
-
-      const travel3 = this.add.image(225,65, 'travel 3').setDisplaySize(150, 90);
-      travel3;
-
-    */
-
-
-
+      // const store3 = this.add.image(225,450, 'store 3').setDisplaySize(110, 90);
+      // const food3 = this.add.image(160,300, 'food 3').setDisplaySize(110, 90);
+      // const medical3 = this.add.image(75,220, 'medical 3').setDisplaySize(110, 90);
+      // const income3 = this.add.image(290,220, 'income 3').setDisplaySize(130, 110);
+      // const hobbies3 = this.add.image(290,550, 'hobbies 3').setDisplaySize(120, 80);
+      // const bank3 = this.add.image(90,550, 'bank 3').setDisplaySize(110, 90);
+      // const travel3 = this.add.image(225,65, 'travel 3').setDisplaySize(150, 90);
   }
 
 
