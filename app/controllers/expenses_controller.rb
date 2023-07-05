@@ -35,6 +35,7 @@ class ExpensesController < ApplicationController
   def update
     if @expense.update(expense_params)
       redirect_to expense_path(@expense), status: :see_other
+
     else
       render :edit, status: :unprocessable_entity
     end
@@ -48,5 +49,23 @@ class ExpensesController < ApplicationController
 
   def expense_params
     params.require(:expense).permit(:title, :amount, :category, :description, :expense_date)
+  end
+
+  def building_level
+    threshold = {
+      '1' => 100,
+      '2' => 500,
+      '3' => 1000,
+    }
+
+    # Sum expense by category
+    expenses_by_category = Expense.where(user_id: current_user.id).group(:category).sum(:amount)
+
+    expenses_by_category.each do |category, amount|
+      if amount >= threshold[category]
+        building = Building.find_by(category: category)
+        building.level < 3 ? building.update!(level: building.level + 1) : building.update!(level: 3)
+      end
+    end
   end
 end
