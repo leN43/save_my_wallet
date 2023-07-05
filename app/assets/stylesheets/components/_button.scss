@@ -36,4 +36,26 @@
   color: #fff;
   cursor: pointer;
   padding: 8px;
+
+  :hover {
+    color: yellow;
+  }
+}
+
+// button help
+.button-help {
+  background-color: $saumon;
+  color: white;
+  border-radius: 50px;
+  padding: 10px;
+  position: absolute;
+  left: 9px;
+  bottom: 50px;
+  height: 41px;
+  width: 45px;
+  text-align: center;
+}
+
+.back {
+  width: 57px;
 }
