@@ -11,19 +11,19 @@
       <div class="city-container" data-controller="phaser">
         <div class="city-bar">
           <div class="progress progress-top" style="height: 10px;">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-food" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-utensils icon"></i></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-food" role="progressbar" style="width: <%=  @expenses["food"].fdiv(@total_category['food']) * 100 %>%" aria-valuenow=" <%=  @expenses["food"].fdiv(@total_category['food']) * 100 %>" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-utensils icon"></i></div>
           </div>
           <div class="progress" style="height: 10px;">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-shopping" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-shopping-bag icon"></i></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-shopping" role="progressbar" style="width:  <%=  @expenses["shopping"].fdiv(@total_category['shopping']) * 100 %>%" aria-valuenow="<%=  @expenses["shopping"].fdiv(@total_category['shopping']) * 100 %>" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-shopping-bag icon"></i></div>
           </div>
           <div class="progress" style="height: 10px;">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-hobbies" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-gamepad icon"></i></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-hobbies" role="progressbar" style="width: <%=  @expenses["hobbies"].fdiv(@total_category['hobbies']) * 100 %>%" aria-valuenow="<%=  @expenses["hobbies"].fdiv(@total_category['hobbies']) * 100 %>" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-gamepad icon"></i></div>
           </div>
           <div class="progress" style="height: 10px;">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-health" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-heartbeat icon"></i></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-health" role="progressbar" style="width: <%=  @expenses["health"].fdiv(@total_category['health']) * 100 %>%" aria-valuenow="<%=  @expenses["health"].fdiv(@total_category['health']) * 100 %>" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-heartbeat icon"></i></div>
           </div>
           <div class="progress" style="height: 10px;">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-travel" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-plane icon"></i></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-travel" role="progressbar" style="width: <%=  @expenses["travel"].fdiv(@total_category['travel']) * 100 %>%" aria-valuenow="<%=  @expenses["travel"].fdiv(@total_category['travel']) * 100 %>" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-plane icon"></i></div>
           </div>
         </div>
       </div>
