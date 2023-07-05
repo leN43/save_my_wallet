@@ -67,6 +67,5 @@ class ExpensesController < ApplicationController
     end
     id_new_building = Building.where(category: building.category, level: key).first.id
     Expense.where(category: building.category, user_id: user.id).update_all(building_id: id_new_building)
-    pry.byebug
   end
 end
