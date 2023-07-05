@@ -82,6 +82,15 @@
   }
 }
 
+.card-form-user-game {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+    margin-top: -22px;
+}
+
 .user-game-card-show {
   a {
     color: $light-blue;
