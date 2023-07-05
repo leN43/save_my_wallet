@@ -3,7 +3,7 @@
     <p id="category"> <%= @expense.category %> </p>
     <p id="description"><i class="fa-regular fa-comment-dots"></i> <%= @expense.description %></p>
     <p><i class="fa-solid fa-coins"></i> <%= @expense.amount %> €</p>
-    <p><i class="fa-regular fa-calendar"></i> <%= @expense.created_at %></p>
+    <p><i class="fa-regular fa-calendar"></i> <%= date_format(@expense.created_at)%></p>
   </div>
 
   <div class="link_to_back">
