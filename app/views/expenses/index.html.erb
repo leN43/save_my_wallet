@@ -14,9 +14,11 @@
     <option value=9 #{'selected' if params[:filter]&.[](:month) == 'Sept'}>Sept</option>
     <option value=10 #{'selected' if params[:filter]&.[](:month) == 'Oct'}>Oct</option>
     <option value=11 #{'selected' if params[:filter]&.[](:month) == 'Nov'}>Nov</option>
-    <option value=12 #{'selected' if params[:filter]&.[](:month) == 'Dec'}>Dec</option>"), prompt: "month", class: "select required" %>
-    <%= submit_tag "search" %>
+    <option value=12 #{'selected' if params[:filter]&.[](:month) == 'Dec'}>Dec</option>"), prompt: "month", class: "select required", onchange: "this.form.submit()"  %>
+    <%= submit_tag "search", style: "display: none" %>
   <% end %>
+  <% @expenses = @expenses.sort_by { |expense| expense.expense_date} if @expenses %>
+  <% @expenses = @expenses.reverse %>
   <% @expenses.each do |expense| %>
     <%= turbo_frame_tag :expenses do %>
       <%= render "expense", expense: expense%>

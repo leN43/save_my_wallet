@@ -1,10 +1,13 @@
-<div class="cards-challenges">
+<div class="user-game-cards">
   <h1><%= @user_game.challenge.title %></h1>
-    <div class="card-challenges-show">
-      <h2><%= @user_game.challenge.description %></h2>
-      <h2><%= @user_game.challenge.badge %></h2>
-      <p><%= @user_game.challenge.level %></p>
-      <p><%= @user_game.status==false ? "Not Achieved" : "Achieved" %></p>
+    <div class="user-game-card-show">
+      <p><%= @user_game.challenge.description %></p>
+      <h2><i class="fa-solid fa-medal"></i> <%= @user_game.challenge.badge %></h2>
+      <p><i class="fa-solid fa-arrow-trend-up"></i> <%= @user_game.challenge.level %></p>
+      <p><%= content_tag(:i,'', class:achieved_or_not[@user_game.status]) %> <%= @user_game.status==false ? "Not Achieved" : "Achieved" %></p>
     </div>
-    <%= link_to 'Back to your challenges', user_games_path %>
+</div>
+
+<div class="link_to_back">
+  <%= link_to 'Back to your challenges', user_games_path, class:"button-add" %>
 </div>
