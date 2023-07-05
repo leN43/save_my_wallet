@@ -37,3 +37,58 @@
   cursor: pointer;
   padding: 8px;
 }
+
+
+.sidenav {
+  height: 95%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgba(246, 113, 127, 0.3);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+
+}
+.close-sidenav {
+width: 0;
+}
+.close-main {
+margin-left: 0;
+}
+.open-sidenav {
+width: 230px;
+}
+.open-main {
+margin-left: 250px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  background: #F6E4C4;
+  color: #F6717F
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}

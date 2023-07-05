@@ -14,7 +14,6 @@
   padding: 5px 0;
   background: #F6717F;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, .05);
-
 }
 
 .navbar button {
@@ -40,19 +39,6 @@
 .navbar button i {
   font-size: 1.5rem;
   pointer-events: none;
-}
-
-.navbar button.plus {
-  height: 60px;
-  color: #F6E4C4;
-  background: #F6717F;
-  border-radius: 25px;
-  margin-top: -50px;
-  box-shadow: 0 10px 20px 0 #e84c4f66;
-}
-
-.navbar button.plus:hover {
-  transform: translateY(-4px);
 }
 
 .navbar .effect {
