@@ -45,6 +45,7 @@ module ApplicationHelper
   def edit_icon
     "#{icon_class('edit')}"
   end
+
   private
   def icon_class(icon)
     "fa-solid fa-#{icon}"
