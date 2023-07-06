@@ -1,13 +1,16 @@
 class ExpensesController < ApplicationController
   before_action :cors_set_access_control_headers
   before_action :set_expense, only: %i[show edit update destroy]
+  before_action :index, only: [:json_expenses]
 
   def index
     @expenses = Expense.all
     if params[:filter]
       @expenses = Expense.select { |e| e.expense_date.month == params[:filter][:month].to_i }
     end
+  end
 
+  def json_expenses
     render json: @expenses
   end
 

@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
   before_action :set_expenses, only: %i[show user_expenses]
 
   def index
-    if @city.nil?
+    if @city.empty?
       redirect_to new_city_path, status: :see_other
     else
       redirect_to city_path(@city), status: :see_other
@@ -61,8 +61,8 @@ class CitiesController < ApplicationController
   end
 
   def set_city
-    if City.where(user_id: current_user).nil?
-      @city = nil
+    if City.where(user_id: current_user).empty?
+      @city = []
     else
       @city = City.includes(:user).where(user_id: current_user)
     end

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   resources :challenges, only: %i[index show] # do
     # resources :user_game, only: %i[new create destroy]
   # end
-  resources :expenses
+  resources :expenses do
+    collection do
+      get 'json_expenses', to: 'expenses#json_expenses'
+    end
+  end
   resources :user_games # , only: %i[index show destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -28,7 +28,7 @@ export default class extends Controller {
   }
 
   fetchdata() {
-    const buildingId = fetch('/expenses', {
+    const buildingId = fetch('/expenses/json_expenses', {
       headers: {
         'Accept': 'application/json'
       }
