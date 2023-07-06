@@ -45,7 +45,7 @@
         photos.forEach((photo) => {
           const building = buildings.find((id) => id === photo.id);
           if (building) {
-            buildingsWithPhotos[photo.category] = [building, photo.photo_id];
+            buildingsWithPhotos[photo.category] = [building, photo.photo_id, photo.level];
           }
         });
         console.log(buildingsWithPhotos)
@@ -100,6 +100,13 @@
       //piggy
       const piggy = this.add.sprite(200, 650, 'piggy');
       piggy.setDisplaySize(80, 80);
+      this.tweens.add({
+        targets: piggy,
+        y: 610,
+        duration: 400,
+        yoyo: true,
+        loop: -1
+      });
 
       const food = this.add.image(225,450, 'food').setDisplaySize(100, 80);
       const shopping = this.add.image(160,300, 'shopping').setDisplaySize(100, 80);
@@ -112,7 +119,8 @@
 
     update ()
     {
-      }
+    }
+
 }
   const config = {
     type: Phaser.AUTO,
