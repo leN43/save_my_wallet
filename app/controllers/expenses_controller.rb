@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  before_action :cors_set_access_control_headers
   before_action :set_expense, only: %i[show edit update destroy]
 
   def index
@@ -69,5 +70,13 @@ class ExpensesController < ApplicationController
     end
     id_new_building = Building.where(category: building.category, level: key).first.id
     Expense.where(category: building.category, user_id: user.id).update_all(building_id: id_new_building)
+  end
+
+  private
+  def cors_set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+    headers['Access-Control-Request-Method'] = '*'
+    headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   end
 end
