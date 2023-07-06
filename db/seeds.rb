@@ -49,12 +49,15 @@ buildings = [
   { name: 'Airport', category: 'travel', level: 3, photo_id: "https://res.cloudinary.com/dgyeheb95/image/upload/v1688472592/airport_t5kzxf.png" }
 ]
 
+
+
 buildings.each do |building|
   Building.create!(
     name: building[:name],
     category: building[:category],
     level: building[:level]
   )
+  Building.last.photo_id.attach(io: URI.open(building[:photo_id]), filename: "photo_#{building[:name]}", content_type: 'image/png')
 end
 
 # Challenges Seed
