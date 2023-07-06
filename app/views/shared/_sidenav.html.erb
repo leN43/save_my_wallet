@@ -1,7 +1,5 @@
 <div id="mySidenav" class="sidenav close-sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
   <a href="<%=user_games_path %>">My challenges</a>
-  <a href="#">Edit your city</a>
   <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
 </div>
 
