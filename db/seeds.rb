@@ -104,7 +104,13 @@ expenses = [
   { title: 'Concert tickets', amount: 150, category: 'hobbies', description: 'Bought concert tickets', building_id: Building.find_by(category: 'hobbies').id, user_id: User.first.id, expense_date: DateTime.now - 12.days },
   { title: 'Lunch with friends', amount: 70, category: 'food', description: 'Met friends for lunch', building_id: Building.find_by(category: 'food').id, user_id: User.first.id, expense_date: DateTime.now - 13.days },
   { title: 'New shoes', amount: 200, category: 'shopping', description: 'Bought stylish shoes', building_id: Building.find_by(category: 'shopping').id, user_id: User.first.id, expense_date: DateTime.now - 14.days },
+  { title: 'Car repair', amount: 500, category: 'regular-expenses', description: 'Car repair', building_id: Building.find_by(category: 'regular-expenses').id, user_id: User.first.id, expense_date: DateTime.now - 15.days },
   { title: 'Doctor consultation', amount: 150, category: 'health', description: 'Visited family doctor', building_id: Building.find_by(category: 'health').id, user_id: User.first.id, expense_date: DateTime.now },
+  { title: 'Car insurance', amount: 300, category: 'regular-expenses', description: 'Paid car insurance', building_id: Building.find_by(category: 'regular-expenses').id, user_id: User.first.id, expense_date: DateTime.now - 20.day },
+  { title: 'New laptop', amount: 1000, category: 'shopping', description: 'Bought new laptop', building_id: Building.find_by(category: 'shopping').id, user_id: User.first.id, expense_date: DateTime.now - 25.days },
+  { title: 'New phone', amount: 800, category: 'shopping', description: 'Bought new phone', building_id: Building.find_by(category: 'shopping').id, user_id: User.first.id, expense_date: DateTime.now - 2.days },
+  { title: 'New TV', amount: 1000, category: 'shopping', description: 'Bought new TV', building_id: Building.find_by(category: 'shopping').id, user_id: User.first.id, expense_date: DateTime.now - 3.days },
+  { title: 'Bonus', amount: 2000, category: 'income', description: 'Yearly Bonus', building_id: Building.find_by(category: 'income').id, user_id: User.first.id, expense_date: DateTime.now - 4.days },
 ]
 
 expenses.each do |expense|

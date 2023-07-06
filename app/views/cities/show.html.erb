@@ -96,9 +96,10 @@
       const backgroundImage = this.add.image(180, 365, 'background');
       backgroundImage.setDisplaySize(this.sys.game.config.width, this.sys.game.config.height);
 
-      //piggy
+      // piggy
       const piggy = this.add.sprite(200, 650, 'piggy');
       piggy.setDisplaySize(80, 80);
+
       this.tweens.add({
         targets: piggy,
         y: 610,
@@ -107,21 +108,84 @@
         loop: -1
       });
 
-      const food = this.add.image(225,450, 'food').setDisplaySize(100, 80);
-      const shopping = this.add.image(160,300, 'shopping').setDisplaySize(100, 80);
-      const health = this.add.image(75,220, 'health').setDisplaySize(100, 80);
-      const income = this.add.image(290,220, 'income').setDisplaySize(120, 100);
-      const hobbies = this.add.image(290,550, 'hobbies').setDisplaySize(100, 80);
-      const regularExpenses = this.add.image(90,550, 'regular-expenses').setDisplaySize(100, 80);
-      const travel = this.add.image(225,65, 'travel').setDisplaySize(100, 80);
-    }
+      piggy.setInteractive();
+      this.input.setDraggable(piggy);
+      piggy.on('drag', function (pointer, dragX, dragY) {
+        this.x = dragX;
+        this.y = dragY;
+      });
+      piggy.dragDistanceThreshold = 0;
+      piggy.on('dragstart', function (pointer) {
+        this.setDepth(1);
+      });
 
+    const data = this.data.data;
+    data.then((result) => {
+      console.log(result);
+      // Food
+      const food = this.add.sprite(225, 450, 'food');
+      food.setDisplaySize(100, 80);
+      food.setInteractive();
+      this.popUp(food, result['food'][2], 'food');
+      const shopping = this.add.sprite(160, 300, 'shopping')
+      shopping.setDisplaySize(100, 80);
+      shopping.setInteractive();
+      this.popUp(shopping, result['shopping'][2], 'shopping');
+      const health = this.add.sprite(75, 220, 'health')
+      health.setDisplaySize(100, 80);
+      health.setInteractive();
+      this.popUp(health, result['health'][2], 'health');
+      const income = this.add.sprite(290, 220, 'income')
+      income.setDisplaySize(120, 100);
+      income.setInteractive();
+      this.popUp(income, result['income'][2], 'income');
+      const hobbies = this.add.sprite(290, 550, 'hobbies')
+      hobbies.setDisplaySize(100, 80);
+      hobbies.setInteractive();
+      this.popUp(hobbies, result['hobbies'][2], 'hobbies');
+      const regularExpenses = this.add.sprite(90, 550, 'regular-expenses')
+      regularExpenses.setDisplaySize(100, 80);
+      regularExpenses.setInteractive();
+      this.popUp(regularExpenses, result['regular-expenses'][2], 'regular-expenses');
+      const travel = this.add.sprite(225, 65, 'travel')
+      travel.setDisplaySize(100, 80);
+      travel.setInteractive();
+      this.popUp(travel, result['travel'][2], 'travel');
+    });
+  }
 
-    update ()
-    {
-    }
+  popUp(sprite, level, category) {
+    const popupText = this.add.text(0, 0, '', {
+      fontFamily: 'Arial',
+      fontSize: 16,
+      backgroundColor: 'rgba(241, 149, 132, 0.9)',
+      padding: {
+        x: 5,
+        y: 5,
+      },
+    });
+    popupText.setVisible(false);
 
+    sprite.on('pointerover', function () {
+      const offsetX = -30;
+      const offsetY = -60;
+      const x = sprite.x + offsetX;
+      const y = sprite.y + offsetY;
+      popupText.setText(`level ${level}`);
+      popupText.setColor('#29AACD');
+      popupText.setPosition(x, y);
+      popupText.setVisible(true);
+    });
+
+    sprite.on('pointerout', function () {
+      popupText.setVisible(false);
+    });
+  }
+
+  update() {}
 }
+
+
   const config = {
     type: Phaser.AUTO,
     width: 360,
