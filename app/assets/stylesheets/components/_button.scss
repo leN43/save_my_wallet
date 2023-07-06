@@ -55,7 +55,7 @@
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: rgba(246, 113, 127, 0.3);
+  background-color: rgba(246, 113, 127, 0.7);
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
@@ -70,14 +70,14 @@ width: 0;
 margin-left: 0;
 }
 .open-sidenav {
-width: 230px;
+width: 45%;
 }
 .open-main {
 margin-left: 250px;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px;
   text-decoration: none;
   font-size: 25px;
   color: white;
