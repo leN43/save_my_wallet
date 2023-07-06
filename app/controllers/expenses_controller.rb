@@ -75,7 +75,6 @@ class ExpensesController < ApplicationController
     Expense.where(category: building.category, user_id: user.id).update_all(building_id: id_new_building)
   end
 
-  private
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
