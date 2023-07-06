@@ -1,4 +1,5 @@
 class CitiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_city, only: %i[index show edit update]
   before_action :set_expenses, only: %i[show user_expenses]
 
@@ -14,9 +15,7 @@ class CitiesController < ApplicationController
     @city = City.new
   end
 
-  def show
-    @expenses.empty? ? @expenses = all_categories.each { |category| @expenses[category] = 0 } : @expenses
-  end
+  def show; end
 
   def edit; end
 
@@ -47,9 +46,19 @@ class CitiesController < ApplicationController
     @total_category = {}
     @expenses = Expense.where(user_id: current_user.id)
     @expenses = @expenses.group_by(&:category).transform_values { |v| v.sum(&:amount) }
+    if @expenses.empty?
+      @expenses = {}
+      helpers.all_categories.each do |category|
+        @expenses[category] = 0
+      end
+    else
+      @expenses
+    end
     threshold = { '1' => 100, '2' => 500, '3' => 1000 }
     @expenses.each do |category, _amount|
       case @expenses[category]
+      when 0..threshold['1']
+        @total_category[category] = threshold['1']
       when threshold['1']..threshold['2']
         @total_category[category] = threshold['2']
       when threshold['2']..threshold['3']

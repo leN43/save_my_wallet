@@ -9,7 +9,139 @@
       </div>
     <% else %>
 
-      <div class="city-container" data-controller="phaser" data-city =<%= @city.ids.first %>>
+  <div class="city-container">
+    <script>
+
+
+    function fetchdata() {
+      const buildingId = fetch('/expenses/json_expenses', {
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then((data) => {
+        // get all building_id
+        const buildingIds =[... new Set(data.map((expense) => expense.building_id))];
+        console.log(buildingIds)
+        return buildingIds;
+      });
+
+    const photoUrl =
+      fetch('/buildings', {
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then((data) => {
+        return data
+      });
+
+      return Promise.all([buildingId, photoUrl])
+      .then(([buildings, photos]) => {
+        let buildingsWithPhotos = {};
+        photos.forEach((photo) => {
+          const building = buildings.find((id) => id === photo.id);
+          if (building) {
+            buildingsWithPhotos[photo.category] = [building, photo.photo_id, photo.level];
+          }
+        });
+        console.log(buildingsWithPhotos)
+        return buildingsWithPhotos;
+    });
+  }
+
+
+
+    class MyScene extends Phaser.Scene {
+
+      constructor (config)
+      {
+        super(config);
+      }
+
+      init (data) {
+        this.data = data;
+      }
+
+
+    preload ()
+    {
+      const dataPhoto = this.data.data
+
+
+      //littlePig
+
+      this.load.image('piggy', 'https://res.cloudinary.com/dgyeheb95/image/upload/v1688546467/littlepig_akphfx.png' )
+      //Background image
+      this.load.image('background', 'https://res.cloudinary.com/dgyeheb95/image/upload/v1688389322/background_lkij73.jpg');
+
+
+      dataPhoto.then((result) => {
+        console.log(result)
+        this.load.image('food', result['food'][1]);
+        this.load.image('shopping', result['shopping'][1]);
+        this.load.image('health', result['health'][1]);
+        this.load.image('income', result['income'][1]);
+        this.load.image('hobbies', result['hobbies'][1]);
+        this.load.image('regular-expenses', result['regular-expenses'][1]);
+        this.load.image('travel', result['travel'][1]);
+      })
+    }
+
+    create ()
+    {
+      //Background image
+      const backgroundImage = this.add.image(180, 365, 'background');
+      backgroundImage.setDisplaySize(this.sys.game.config.width, this.sys.game.config.height);
+
+      //piggy
+      const piggy = this.add.sprite(200, 650, 'piggy');
+      piggy.setDisplaySize(80, 80);
+      this.tweens.add({
+        targets: piggy,
+        y: 610,
+        duration: 400,
+        yoyo: true,
+        loop: -1
+      });
+
+      const food = this.add.image(225,450, 'food').setDisplaySize(100, 80);
+      const shopping = this.add.image(160,300, 'shopping').setDisplaySize(100, 80);
+      const health = this.add.image(75,220, 'health').setDisplaySize(100, 80);
+      const income = this.add.image(290,220, 'income').setDisplaySize(120, 100);
+      const hobbies = this.add.image(290,550, 'hobbies').setDisplaySize(100, 80);
+      const regularExpenses = this.add.image(90,550, 'regular-expenses').setDisplaySize(100, 80);
+      const travel = this.add.image(225,65, 'travel').setDisplaySize(100, 80);
+    }
+
+
+    update ()
+    {
+    }
+
+}
+  const config = {
+    type: Phaser.AUTO,
+    width: 360,
+    height: 730,
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 10 },
+      }
+    },
+    };
+    const data = fetchdata();
+    const game = new Phaser.Game(config);
+    game.scene.add('myScene', MyScene, true, {data: data});
+    game.scene.start();
+    const el = document.body.querySelector(".city-container");
+    el.appendChild(game.canvas);
+
+  </script>
+
         <div class="city-bar">
           <div class="progress progress-top" style="height: 10px;">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-food" role="progressbar" style="width: <%=  @expenses["food"].fdiv(@total_category['food']) * 100 %>%" aria-valuenow=" <%=  @expenses["food"].fdiv(@total_category['food']) * 100 %>" aria-valuemin="0" aria-valuemax="100"><i class="fa-solid fa-utensils icon"></i></div>
