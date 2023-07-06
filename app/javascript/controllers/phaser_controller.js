@@ -35,8 +35,10 @@ export default class extends Controller {
     })
     .then(response => response.json())
     .then((data) => {
+      console.log(data)
       // get all building_id
       const buildingIds =[... new Set(data.map((expense) => expense.building_id))];
+      console.log(buildingIds)
       return buildingIds;
     });
 
@@ -60,6 +62,7 @@ export default class extends Controller {
           buildingsWithPhotos[photo.category] = [building, photo.photo_id];
         }
       });
+      console.log(buildingsWithPhotos)
       return buildingsWithPhotos;
   });
 }
