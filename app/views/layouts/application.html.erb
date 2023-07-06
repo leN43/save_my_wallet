@@ -36,12 +36,13 @@
       <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body>
+  <body data-controller="sidenav">
     <%= render "shared/flashes" %>
     <%= yield %>
     <% unless current_page?(new_user_session_path) || current_page?(user_session_path) || current_page?(new_user_registration_path) %>
       <%= render "shared/navbar" %>
     <% end %>
+
     <script>
       $(document).ready(function() {
         $('.close').click(function() {
@@ -49,5 +50,6 @@
         });
       });
     </script>
+
   </body>
 </html>

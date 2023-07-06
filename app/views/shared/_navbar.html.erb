@@ -1,42 +1,36 @@
-
-    <div class="navbar">
-        <div class="effect"></div>
-        <%= link_to cities_path do %>
-        <button class="active">
-          <i class="fa-solid fa-house"></i>
-        </button>
-        <% end %>
-        <%=render "shared/navigation_button"%>
-         <%= link_to user_games_path do %>
-        <button>
-            <i class="fa-solid fa-user"></i>
-        </button>
-        <% end %>
-    </div>
+<div class="navbar">
+  <div class="effect"></div>
+  <%= link_to cities_path do %>
+    <button class="active">
+      <i class="fa-solid fa-house"></i>
+    </button>
+  <% end %>
+  <%= render "shared/navigation_button" %>
+  <button class="my-sidenavbar">
+    <i class="fa-solid fa-user"></i>
+  </button>
+</div>
+<%= render "shared/sidenav" %>
 <script>
-  const effect = document.querySelector('.effect');
+const effect = document.querySelector('.effect');
 const buttons = document.querySelectorAll('.navbar button:not(.plus)');
 
 buttons.forEach(button => {
+  button.addEventListener('click', e => {
+    const x = e.target.offsetLeft;
 
-    button.addEventListener('click', e => {
+    buttons.forEach(btn => {
+      btn.classList.remove('active');
+    });
 
-        const x = e.target.offsetLeft;
+    e.target.classList.add('active');
 
-        buttons.forEach(btn => {
-            btn.classList.remove('active');
-        })
-
-        e.target.classList.add('active');
-
-        anime({
-            targets: '.effect',
-            left: `${x}px`,
-            opacity: '1',
-            duration: 600
-        })
-
-    })
-
-})
+    anime({
+      targets: '.effect',
+      left: `${x}px`,
+      opacity: '1',
+      duration: 600
+    });
+  });
+});
 </script>
