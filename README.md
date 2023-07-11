@@ -1,24 +1,100 @@
-# README
+<br/>
+<p align="center">
+  <a href="https://github.com/audreypa/save_my_wallet">
+    <img src="app/assets/images/cover.png" alt="Logo" width="80" height="80">
+  </a>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  <h3 align="center">README</h3>
 
-Things you may want to cover:
+  <p align="center">
+    Save My Wallet in the last Le Wagon's project made by Leslie, Niels, Quentin and Audrey.
+    <br/>
+    <br/>
+  </p>
+</p>
 
-* Ruby version
+![Downloads](https://img.shields.io/github/downloads/audreypa/save_my_wallet/total) ![Contributors](https://img.shields.io/github/contributors/audreypa/save_my_wallet?color=dark-green) ![Forks](https://img.shields.io/github/forks/audreypa/save_my_wallet?style=social) ![Issues](https://img.shields.io/github/issues/audreypa/save_my_wallet)
 
-* System dependencies
+## Table Of Contents
 
-* Configuration
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Contributing](#contributing)
+* [Authors](#authors)
+* [Acknowledgements](#acknowledgements)
 
-* Database creation
+## About The Project
 
-* Database initialization
+This mobile app made in two weeks aims to monitor daily expenses with gamification. Once the user record an expense, its city evolve according to different levels.
 
-* How to run the test suite
+## Built With
 
-* Services (job queues, cache servers, search engines, etc.)
+This app was built with Ruby on Rails
 
-* Deployment instructions
+* [Ruby on Rails](https://rubyonrails.org/)
+* [Ruby](https://ruby-doc.org/3.2.2/)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Phaserjs](https://phaser.io/)
 
-* ...
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+
+### Installation
+
+1. Get a  API Key for cloudinary at [https://cloudinary.com/]
+
+2. Clone the repo
+
+```sh
+git clone https://github.com/audreypa/save_my_wallet.git
+```
+
+3. Install packages
+
+```sh
+bundle install
+```
+4. Create db
+
+```sh
+rails db:drop db:create db:migrate db:seed
+```
+
+5. Enter your API Key for cloudinary in `.env`
+
+```ruby
+CLOUDINARY_URL = 'ENTER YOUR API';
+```
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/audreypa/save_my_wallet/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
+* Please make sure you check your spelling and grammar.
+* Create individual PR for each suggestion.
+* Please also read through the [Code Of Conduct](https://github.com/audreypa/save_my_wallet/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
+
+### Creating A Pull Request
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Authors
+
+* **Audrey** - ** - [Audrey](https://github.com/audreypa/) - **
+* **Leslie** - ** - [Leslie](https://github.com/LeslieRds) - **
+* **Quentin** - ** - [Quentin](https://github.com/Quentinrbd) - **
+* **Niels** - ** - [Niels](https://github.com/leN43) - **
