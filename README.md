@@ -28,7 +28,7 @@
 
 ## About The Project
 
-This mobile app made in two weeks aims to monitor daily expenses with gamification. Once the user record an expense, its city evolve according to different levels.
+This mobile app made in two weeks aims to monitor daily expenses with gamification. Once the user records an expense, its city evolve according to different levels.
 
 ## Built With
 
