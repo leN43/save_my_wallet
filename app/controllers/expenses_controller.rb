@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
   before_action :index, only: [:json_expenses]
 
   def index
-    @expenses = Expense.all
+    @expenses = Expense.includes(:user, :building).where(user_id: current_user.id).order(expense_date: :desc)
     if params[:filter]
       @expenses = Expense.select { |e| e.expense_date.month == params[:filter][:month].to_i }
     end
