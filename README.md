@@ -32,6 +32,7 @@ This project was made during Le Wagon Bootcamp. Built in two weeks, improvements
 For data and expenses, please use the following virtual user:
 email : liloo@lewagon.com
 password : lewagon
+url : www.savemyw.com
 
 ## Built With
 
@@ -49,7 +50,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This project is a mobile app. To correctly use it, please go to www.savemyw.com on your mobile
+and click to "add to home page" to get the icon app on your phone !
 
 
 ### Installation
