@@ -27,8 +27,11 @@
 * [Acknowledgements](#acknowledgements)
 
 ## About The Project
-
-This mobile app made in two weeks aims to monitor daily expenses with gamification. Once the user record an expense, its city evolve according to different levels.
+This mobile app made in two weeks aims to monitor daily expenses with gamification. Once the user records an expense, its city evolve according to different levels.
+This project was made during Le Wagon Bootcamp. Built in two weeks, improvements are obviously necessary. Feel free to fork it and improve it if you want !
+For data and expenses, please use the following virtual user:
+email : liloo@lewagon.com
+password : lewagon
 
 ## Built With
 
