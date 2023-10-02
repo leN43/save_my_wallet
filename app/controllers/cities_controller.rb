@@ -1,7 +1,8 @@
 class CitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :set_city, only: %i[index show edit update]
-  before_action :set_expenses, only: %i[show user_expenses]
+  before_action :check_expenses, only: %i[show set_expenses]
+  before_action :set_expenses, only: %i[show]
 
   def index
     if @city.empty?
@@ -42,18 +43,16 @@ class CitiesController < ApplicationController
 
   private
 
-  def set_expenses
+  def check_expenses
     @total_category = {}
     @expenses = Expense.where(user_id: current_user.id)
     @expenses = @expenses.group_by(&:category).transform_values { |v| v.sum(&:amount) }
-    if @expenses.empty?
-      @expenses = {}
-      helpers.all_categories.each do |category|
-        @expenses[category] = 0
-      end
-    else
-      @expenses
+    helpers.all_categories.each do |category|
+      @expenses[category] = 0 unless @expenses[category]
     end
+  end
+
+  def set_expenses
     threshold = { '1' => 100, '2' => 500, '3' => 1000 }
     @expenses.each do |category, _amount|
       case @expenses[category]
